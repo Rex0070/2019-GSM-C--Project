@@ -84,8 +84,8 @@
             this.toolStripSeparator1,
             this.끝내기ToolStripMenuItem});
             this.파일ToolStripMenuItem.Name = "파일ToolStripMenuItem";
-            this.파일ToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
-            this.파일ToolStripMenuItem.Text = "GSM BOOK";
+            this.파일ToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.파일ToolStripMenuItem.Text = "UNICEF";
             // 
             // 가입자목록새로고침ToolStripMenuItem
             // 
@@ -277,7 +277,7 @@
             this.groupBox6.Size = new System.Drawing.Size(479, 318);
             this.groupBox6.TabIndex = 8;
             this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "현재 회원 목록";
+            this.groupBox6.Text = "현재 부정행위를 저지른 회원 목록";
             // 
             // dataGridView2
             // 
@@ -304,7 +304,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form4";
-            this.Text = "GSM BOOK - 메인 화면";
+            this.Text = "UNICEF - 메인 화면";
             this.Load += new System.EventHandler(this.Form4_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

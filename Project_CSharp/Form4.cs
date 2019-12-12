@@ -16,6 +16,7 @@ namespace Project_CSharp
     {
         MySqlConnection conn;
         MySqlDataAdapter dataAdapter;
+        MySqlDataAdapter dataAdapter2;
         DataSet dataSet;
         string apppath = System.IO.Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath);
 
@@ -24,6 +25,9 @@ namespace Project_CSharp
             InitializeComponent();
             this.pictureBox1.Image = Image.FromFile(@"..\..\image\tenor.gif");
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            this.pictureBox2.Image = Image.FromFile(@"..\..\image\billy.gif");
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         private void ShowDBConnectionState()
@@ -49,7 +53,7 @@ namespace Project_CSharp
             }
             else
             {
-                MessageBox.Show("DB를 연결해주세요!", "GSM BOOK", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("DB를 연결해주세요!", "UNICEF", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -60,7 +64,7 @@ namespace Project_CSharp
 
         private void 정보ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("이 시스템은 도서 구매 데이터베이스의 관리를 위한 시스템입니다.\n\n- Made by Chrina -", "System Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("이 시스템은 보안관리자와 시스템관리가 깨어있습니다.\n\n- 안★전★보★장 -", "★System Warning★", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void DBStart_Click(object sender, EventArgs e)
@@ -102,11 +106,14 @@ namespace Project_CSharp
                 conn.Open();
                 ShowDBConnectionState();
 
-                dataAdapter = new MySqlDataAdapter("SELECT * FROM customer", conn);
+                dataAdapter = new MySqlDataAdapter("SELECT * FROM profile", conn);
+                dataAdapter2 = new MySqlDataAdapter("SELECT * FROM cheat_has_player_info", conn);
                 dataSet = new DataSet();
 
-                dataAdapter.Fill(dataSet, "customer");
-                dataGridView1.DataSource = dataSet.Tables["customer"];
+                dataAdapter.Fill(dataSet, "profile");
+                dataAdapter2.Fill(dataSet, "cheat_has_player_info");
+                dataGridView1.DataSource = dataSet.Tables["profile"];
+                dataGridView2.DataSource = dataSet.Tables["cheat_has_player_info"];
             }
             catch (Exception ex)
             {
@@ -116,11 +123,14 @@ namespace Project_CSharp
 
         private void 가입자목록새로고침ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-                dataAdapter = new MySqlDataAdapter("SELECT * FROM customer", conn);
-                dataSet = new DataSet();
+            dataAdapter = new MySqlDataAdapter("SELECT * FROM profile", conn);
+            dataAdapter2 = new MySqlDataAdapter("SELECT * FROM cheat_has_player_info", conn);
+            dataSet = new DataSet();
 
-                dataAdapter.Fill(dataSet, "customer");
-                dataGridView1.DataSource = dataSet.Tables["customer"];
+            dataAdapter.Fill(dataSet, "profile");
+            dataAdapter2.Fill(dataSet, "cheat_has_player_info");
+            dataGridView1.DataSource = dataSet.Tables["profile"];
+            dataGridView2.DataSource = dataSet.Tables["cheat_has_player_info"];
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

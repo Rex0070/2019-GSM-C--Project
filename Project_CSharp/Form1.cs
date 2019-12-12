@@ -16,42 +16,46 @@ namespace Project_CSharp
         public Form1()
         {
             InitializeComponent();
+
+            this.pictureBox1.Image = Image.FromFile(@"..\..\image\tenor.gif");
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         MySqlConnection conn;
         MySqlDataAdapter dataAdapter;
         DataSet dataSet;
+        string apppath = System.IO.Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath);
 
         private void Form1_Load(object sender, EventArgs e)
         {
             conn = new MySqlConnection("server=localhost;port=3306;database=mydb;uid=root;pwd=1234;charset=UTF8");
-            dataAdapter = new MySqlDataAdapter("SELECT * FROM book", conn);
+            dataAdapter = new MySqlDataAdapter("SELECT * FROM basic_info", conn);
             dataSet = new DataSet();
 
-            dataAdapter.Fill(dataSet, "book");
-            dataGridView1.DataSource = dataSet.Tables["book"];
+            dataAdapter.Fill(dataSet, "basic_info");
+            dataGridView1.DataSource = dataSet.Tables["basic_info"];
         }
 
         private void btnSelect_Click(object sender, EventArgs e)
         {
-            string sql = "SELECT * FROM book WHERE publisher=@publisher";
+            string sql = "SELECT * FROM basic_info WHERE User_id=@user_id";
             dataAdapter.SelectCommand = new MySqlCommand(sql, conn);
-            dataAdapter.SelectCommand.Parameters.AddWithValue("@publisher", textBoxPublisher.Text);
+            dataAdapter.SelectCommand.Parameters.AddWithValue("@user_id", User_id.Text);
 
             try
             {
                 conn.Open();
                 dataSet.Clear();
-                if (dataAdapter.Fill(dataSet, "book") > 0)
-                    dataGridView1.DataSource = dataSet.Tables["book"];
+                if (dataAdapter.Fill(dataSet, "basic_info") > 0)
+                    dataGridView1.DataSource = dataSet.Tables["basic_info"];
                 else
                 {
                     MessageBox.Show("검색된 데이터가 없습니다.");
-                    dataAdapter = new MySqlDataAdapter("SELECT * FROM book", conn);
+                    dataAdapter = new MySqlDataAdapter("SELECT * FROM basic_info", conn);
                     dataSet = new DataSet();
 
-                    dataAdapter.Fill(dataSet, "book");
-                    dataGridView1.DataSource = dataSet.Tables["book"];
+                    dataAdapter.Fill(dataSet, "basic_info");
+                    dataGridView1.DataSource = dataSet.Tables["basic_info"];
                 }
 
                     
@@ -68,29 +72,35 @@ namespace Project_CSharp
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            string sql = "INSERT INTO book (bookname, publisher, price) " +
-                "VALUES(@bookname, @publisher, @price)";
+            string sql = "INSERT INTO basic_info (User_id, Name, Level, Cash, Grade, Rank) " +
+                "VALUES(@user_id, @name, @level, @cash, @grade, @rank)";
             dataAdapter.InsertCommand = new MySqlCommand(sql, conn);
-            dataAdapter.InsertCommand.Parameters.AddWithValue("@bookname", textBoxBookName.Text);
-            dataAdapter.InsertCommand.Parameters.AddWithValue("@publisher", textBoxPublisher.Text);
-            dataAdapter.InsertCommand.Parameters.AddWithValue("@price", textBoxPrice.Text);
+            dataAdapter.InsertCommand.Parameters.AddWithValue("@user_id", User_id.Text);
+            dataAdapter.InsertCommand.Parameters.AddWithValue("@name", Name.Text);
+            dataAdapter.InsertCommand.Parameters.AddWithValue("@level", Level.Text);
+            dataAdapter.InsertCommand.Parameters.AddWithValue("@cash", Cash.Text);
+            dataAdapter.InsertCommand.Parameters.AddWithValue("@grade", Grade.Text);
+            dataAdapter.InsertCommand.Parameters.AddWithValue("@rank", Rank.Text);
 
-            DataRow newRow = dataSet.Tables["book"].NewRow();
-            newRow["bookname"] = textBoxBookName.Text;
-            newRow["publisher"] = textBoxPublisher.Text;
-            newRow["price"] = textBoxPrice.Text;
-            dataSet.Tables["book"].Rows.Add(newRow);
+            DataRow newRow = dataSet.Tables["basic_info"].NewRow();
+            newRow["User_id"] = User_id.Text;
+            newRow["Name"] = Name.Text;
+            newRow["Level"] = Level.Text;
+            newRow["Cash"] = Cash.Text;
+            newRow["Grade"] = Grade.Text;
+            newRow["Rank"] = Rank.Text;
+            dataSet.Tables["basic_info"].Rows.Add(newRow);
 
             try
             {
-                if (dataAdapter.Update(dataSet, "book") > 0)
+                if (dataAdapter.Update(dataSet, "basic_info") > 0)
                 {
                     dataSet.Clear();
-                    dataAdapter.Fill(dataSet, "book");
-                    dataGridView1.DataSource = dataSet.Tables["book"];
+                    dataAdapter.Fill(dataSet, "basic_info");
+                    dataGridView1.DataSource = dataSet.Tables["basic_info"];
                 }
                 else
-                    MessageBox.Show("검색된 데이터가 없습니다.");
+                    MessageBox.Show("삽입할 수 없습니다.");
             }
             catch (Exception ex)
             {
@@ -106,10 +116,10 @@ namespace Project_CSharp
         {
             string sql = "UPDATE book SET bookname=@bookname WHERE publisher=@publisher";
             dataAdapter.UpdateCommand = new MySqlCommand(sql, conn);
-            dataAdapter.UpdateCommand.Parameters.AddWithValue("@bookid", textBoxBookId.Text);
-            dataAdapter.UpdateCommand.Parameters.AddWithValue("@bookname", textBoxBookName.Text);
-            dataAdapter.UpdateCommand.Parameters.AddWithValue("@publisher", textBoxPublisher.Text);
-            dataAdapter.UpdateCommand.Parameters.AddWithValue("@price", textBoxPublisher.Text);
+            dataAdapter.UpdateCommand.Parameters.AddWithValue("@bookid", Name.Text);
+            dataAdapter.UpdateCommand.Parameters.AddWithValue("@bookname", Level.Text);
+            dataAdapter.UpdateCommand.Parameters.AddWithValue("@publisher", Cash.Text);
+            dataAdapter.UpdateCommand.Parameters.AddWithValue("@price", Cash.Text);
 
             try
             {
@@ -136,10 +146,10 @@ namespace Project_CSharp
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            string sql = "DELETE FROM book WHERE bookid=@bookid";
+            string sql = "DELETE FROM basic_info WHERE User_id=@user_id";
             dataAdapter.DeleteCommand = new MySqlCommand(sql, conn);
-            int id = (int)dataGridView1.SelectedRows[0].Cells["bookid"].Value;
-            dataAdapter.DeleteCommand.Parameters.AddWithValue("@bookid", id);
+            int id = (int)dataGridView1.SelectedRows[0].Cells["User_id"].Value;
+            dataAdapter.DeleteCommand.Parameters.AddWithValue("@user_id", id);
 
             try
             {
@@ -147,8 +157,8 @@ namespace Project_CSharp
                 if (dataAdapter.DeleteCommand.ExecuteNonQuery() > 0)
                 {
                     dataSet.Clear();
-                    dataAdapter.Fill(dataSet, "book");
-                    dataGridView1.DataSource = dataSet.Tables["book"];
+                    dataAdapter.Fill(dataSet, "basic_info");
+                    dataGridView1.DataSource = dataSet.Tables["basic_info"];
                 }
                 else
                 {
@@ -181,16 +191,21 @@ namespace Project_CSharp
 
         private void TextEmpty_Click(object sender, EventArgs e)
         {
-            textBoxBookId.Text = "";
-            textBoxBookName.Text = "";
-            textBoxPublisher.Text = "";
-            textBoxPrice.Text = "";
+            Name.Text = "";
+            Level.Text = "";
+            Cash.Text = "";
+            Grade.Text = "";
 
-            dataAdapter = new MySqlDataAdapter("SELECT * FROM book", conn);
+            dataAdapter = new MySqlDataAdapter("SELECT * FROM basic_info", conn);
             dataSet = new DataSet();
 
-            dataAdapter.Fill(dataSet, "book");
-            dataGridView1.DataSource = dataSet.Tables["book"];
+            dataAdapter.Fill(dataSet, "basic_info");
+            dataGridView1.DataSource = dataSet.Tables["basic_info"];
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

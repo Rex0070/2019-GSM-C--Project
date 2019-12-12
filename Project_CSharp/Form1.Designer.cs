@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBoxPrice = new System.Windows.Forms.TextBox();
+            this.Grade = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBoxPublisher = new System.Windows.Forms.TextBox();
+            this.Cash = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBoxBookName = new System.Windows.Forms.TextBox();
+            this.Level = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBoxBookId = new System.Windows.Forms.TextBox();
+            this.Name = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSelect = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
@@ -50,6 +50,10 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.TextEmpty = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Rank = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.User_id = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -60,98 +64,102 @@
             // panel1
             // 
             this.panel1.AutoScroll = true;
-            this.panel1.Controls.Add(this.textBoxPrice);
-            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.User_id);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.Rank);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.Grade);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.textBoxPublisher);
+            this.panel1.Controls.Add(this.Cash);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBoxBookName);
+            this.panel1.Controls.Add(this.Level);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textBoxBookId);
+            this.panel1.Controls.Add(this.Name);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(26, 24);
+            this.panel1.Location = new System.Drawing.Point(26, 34);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(541, 158);
             this.panel1.TabIndex = 0;
             // 
-            // textBoxPrice
+            // Grade
             // 
-            this.textBoxPrice.Location = new System.Drawing.Point(106, 119);
-            this.textBoxPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxPrice.Name = "textBoxPrice";
-            this.textBoxPrice.Size = new System.Drawing.Size(377, 21);
-            this.textBoxPrice.TabIndex = 7;
+            this.Grade.Location = new System.Drawing.Point(104, 104);
+            this.Grade.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Grade.Name = "Grade";
+            this.Grade.Size = new System.Drawing.Size(377, 21);
+            this.Grade.TabIndex = 7;
             // 
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label7.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label7.Location = new System.Drawing.Point(80, 0);
+            this.label7.Location = new System.Drawing.Point(139, 8);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(329, 24);
             this.label7.TabIndex = 7;
-            this.label7.Text = "GSM BOOK 시스템(관리자용) - 도서 목록";
+            this.label7.Text = "UNICEF 관리 시스템 - 기본 정보 목록";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(42, 94);
+            this.label4.Location = new System.Drawing.Point(63, 82);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 12);
+            this.label4.Size = new System.Drawing.Size(35, 12);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Publisher";
+            this.label4.Text = "Cash";
             // 
-            // textBoxPublisher
+            // Cash
             // 
-            this.textBoxPublisher.Location = new System.Drawing.Point(106, 94);
-            this.textBoxPublisher.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxPublisher.Name = "textBoxPublisher";
-            this.textBoxPublisher.Size = new System.Drawing.Size(377, 21);
-            this.textBoxPublisher.TabIndex = 5;
+            this.Cash.Location = new System.Drawing.Point(104, 79);
+            this.Cash.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Cash.Name = "Cash";
+            this.Cash.Size = new System.Drawing.Size(377, 21);
+            this.Cash.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(66, 120);
+            this.label3.Location = new System.Drawing.Point(59, 107);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 12);
+            this.label3.Size = new System.Drawing.Size(39, 12);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Price";
+            this.label3.Text = "Grade";
             // 
-            // textBoxBookName
+            // Level
             // 
-            this.textBoxBookName.Location = new System.Drawing.Point(106, 67);
-            this.textBoxBookName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxBookName.Name = "textBoxBookName";
-            this.textBoxBookName.Size = new System.Drawing.Size(377, 21);
-            this.textBoxBookName.TabIndex = 3;
+            this.Level.Location = new System.Drawing.Point(104, 52);
+            this.Level.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Level.Name = "Level";
+            this.Level.Size = new System.Drawing.Size(377, 21);
+            this.Level.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 69);
+            this.label2.Location = new System.Drawing.Point(64, 55);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 12);
+            this.label2.Size = new System.Drawing.Size(35, 12);
             this.label2.TabIndex = 2;
-            this.label2.Text = "BookName";
+            this.label2.Text = "Level";
             // 
-            // textBoxBookId
+            // Name
             // 
-            this.textBoxBookId.Location = new System.Drawing.Point(106, 42);
-            this.textBoxBookId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxBookId.Name = "textBoxBookId";
-            this.textBoxBookId.Size = new System.Drawing.Size(377, 21);
-            this.textBoxBookId.TabIndex = 1;
+            this.Name.Location = new System.Drawing.Point(104, 27);
+            this.Name.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name.Name = "Name";
+            this.Name.Size = new System.Drawing.Size(377, 21);
+            this.Name.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(59, 44);
+            this.label1.Location = new System.Drawing.Point(60, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 12);
+            this.label1.Size = new System.Drawing.Size(39, 12);
             this.label1.TabIndex = 0;
-            this.label1.Text = "BookID";
+            this.label1.Text = "Name";
             // 
             // btnSelect
             // 
@@ -277,6 +285,40 @@
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
+            // Rank
+            // 
+            this.Rank.Location = new System.Drawing.Point(104, 129);
+            this.Rank.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Rank.Name = "Rank";
+            this.Rank.Size = new System.Drawing.Size(377, 21);
+            this.Rank.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(64, 130);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(33, 12);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Rank";
+            // 
+            // User_id
+            // 
+            this.User_id.Location = new System.Drawing.Point(104, 2);
+            this.User_id.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.User_id.Name = "User_id";
+            this.User_id.Size = new System.Drawing.Size(377, 21);
+            this.User_id.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(52, 5);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(47, 12);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "User_id";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -288,6 +330,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label7);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
@@ -306,13 +349,13 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBoxPrice;
+        private System.Windows.Forms.TextBox Grade;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBoxPublisher;
+        private System.Windows.Forms.TextBox Cash;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxBookName;
+        private System.Windows.Forms.TextBox Level;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxBookId;
+        private System.Windows.Forms.TextBox Name;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSelect;
         private System.Windows.Forms.Button btnInsert;
@@ -326,5 +369,9 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button TextEmpty;
+        private System.Windows.Forms.TextBox User_id;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox Rank;
+        private System.Windows.Forms.Label label5;
     }
 }
