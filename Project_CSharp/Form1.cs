@@ -40,7 +40,7 @@ namespace Project_CSharp
         {
             string sql = "SELECT * FROM basic_info WHERE User_id=@user_id";
             dataAdapter.SelectCommand = new MySqlCommand(sql, conn);
-            dataAdapter.SelectCommand.Parameters.AddWithValue("@user_id", User_id.Text);
+            dataAdapter.SelectCommand.Parameters.AddWithValue("@user_id", Rank.Text);
 
             try
             {
@@ -77,18 +77,18 @@ namespace Project_CSharp
             dataAdapter.InsertCommand = new MySqlCommand(sql, conn);
             dataAdapter.InsertCommand.Parameters.AddWithValue("@user_id", User_id.Text);
             dataAdapter.InsertCommand.Parameters.AddWithValue("@name", Name.Text);
-            dataAdapter.InsertCommand.Parameters.AddWithValue("@level", Level.Text);
-            dataAdapter.InsertCommand.Parameters.AddWithValue("@cash", Cash.Text);
-            dataAdapter.InsertCommand.Parameters.AddWithValue("@grade", Grade.Text);
-            dataAdapter.InsertCommand.Parameters.AddWithValue("@rank", Rank.Text);
+            dataAdapter.InsertCommand.Parameters.AddWithValue("@level", Convert.ToInt32(Level.Text));
+            dataAdapter.InsertCommand.Parameters.AddWithValue("@cash", Convert.ToInt32(Cash.Text));
+            dataAdapter.InsertCommand.Parameters.AddWithValue("@grade", Convert.ToInt32(Grade.Text));
+            dataAdapter.InsertCommand.Parameters.AddWithValue("@rank", Convert.ToInt32(Rank.Text));
 
             DataRow newRow = dataSet.Tables["basic_info"].NewRow();
             newRow["User_id"] = User_id.Text;
             newRow["Name"] = Name.Text;
-            newRow["Level"] = Level.Text;
-            newRow["Cash"] = Cash.Text;
-            newRow["Grade"] = Grade.Text;
-            newRow["Rank"] = Rank.Text;
+            newRow["Level"] = Convert.ToInt32(Level.Text);
+            newRow["Cash"] = Convert.ToInt32(Cash.Text);
+            newRow["Grade"] = Convert.ToInt32(Grade.Text);
+            newRow["Rank"] = Convert.ToInt32(Rank.Text);
             dataSet.Tables["basic_info"].Rows.Add(newRow);
 
             try
@@ -116,10 +116,10 @@ namespace Project_CSharp
         {
             string sql = "UPDATE book SET bookname=@bookname WHERE publisher=@publisher";
             dataAdapter.UpdateCommand = new MySqlCommand(sql, conn);
-            dataAdapter.UpdateCommand.Parameters.AddWithValue("@bookid", Name.Text);
-            dataAdapter.UpdateCommand.Parameters.AddWithValue("@bookname", Level.Text);
-            dataAdapter.UpdateCommand.Parameters.AddWithValue("@publisher", Cash.Text);
-            dataAdapter.UpdateCommand.Parameters.AddWithValue("@price", Cash.Text);
+            dataAdapter.UpdateCommand.Parameters.AddWithValue("@bookid", User_id.Text);
+            dataAdapter.UpdateCommand.Parameters.AddWithValue("@bookname", Name.Text);
+            dataAdapter.UpdateCommand.Parameters.AddWithValue("@publisher", Level.Text);
+            dataAdapter.UpdateCommand.Parameters.AddWithValue("@price", Level.Text);
 
             try
             {
@@ -191,10 +191,10 @@ namespace Project_CSharp
 
         private void TextEmpty_Click(object sender, EventArgs e)
         {
+            User_id.Text = "";
             Name.Text = "";
             Level.Text = "";
             Cash.Text = "";
-            Grade.Text = "";
 
             dataAdapter = new MySqlDataAdapter("SELECT * FROM basic_info", conn);
             dataSet = new DataSet();
