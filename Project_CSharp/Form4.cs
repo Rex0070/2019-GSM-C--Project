@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,10 +17,13 @@ namespace Project_CSharp
         MySqlConnection conn;
         MySqlDataAdapter dataAdapter;
         DataSet dataSet;
+        string apppath = System.IO.Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath);
 
         public Form4()
         {
             InitializeComponent();
+            this.pictureBox1.Image = Image.FromFile(@"..\..\image\tenor.gif");
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         private void ShowDBConnectionState()
@@ -117,6 +121,11 @@ namespace Project_CSharp
 
                 dataAdapter.Fill(dataSet, "customer");
                 dataGridView1.DataSource = dataSet.Tables["customer"];
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

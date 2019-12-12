@@ -48,3 +48,19 @@ D:\파일 관리자\github\C#Workspace\Chapter04\WinFormDB01\Project_CSharp\obj\
 D:\파일 관리자\github\C#Workspace\Chapter04\WinFormDB01\Project_CSharp\obj\Debug\Project_CSharp.exe
 D:\파일 관리자\github\C#Workspace\Chapter04\WinFormDB01\Project_CSharp\obj\Debug\Project_CSharp.pdb
 D:\파일 관리자\github\C#Workspace\Chapter04\WinFormDB01\Project_CSharp\obj\Debug\Project_CSharp.Form4.resources
+C:\Users\jshga\Documents\GitHub\2019-GSM-C-Project\Project_CSharp\bin\Debug\Project_CSharp.exe.config
+C:\Users\jshga\Documents\GitHub\2019-GSM-C-Project\Project_CSharp\bin\Debug\Project_CSharp.exe
+C:\Users\jshga\Documents\GitHub\2019-GSM-C-Project\Project_CSharp\bin\Debug\Project_CSharp.pdb
+C:\Users\jshga\Documents\GitHub\2019-GSM-C-Project\Project_CSharp\bin\Debug\Google.Protobuf.dll
+C:\Users\jshga\Documents\GitHub\2019-GSM-C-Project\Project_CSharp\bin\Debug\Renci.SshNet.dll
+C:\Users\jshga\Documents\GitHub\2019-GSM-C-Project\Project_CSharp\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\jshga\Documents\GitHub\2019-GSM-C-Project\Project_CSharp\obj\Debug\Project_CSharp.csprojAssemblyReference.cache
+C:\Users\jshga\Documents\GitHub\2019-GSM-C-Project\Project_CSharp\obj\Debug\Project_CSharp.Form1.resources
+C:\Users\jshga\Documents\GitHub\2019-GSM-C-Project\Project_CSharp\obj\Debug\Project_CSharp.Form2.resources
+C:\Users\jshga\Documents\GitHub\2019-GSM-C-Project\Project_CSharp\obj\Debug\Project_CSharp.Form3.resources
+C:\Users\jshga\Documents\GitHub\2019-GSM-C-Project\Project_CSharp\obj\Debug\Project_CSharp.Form4.resources
+C:\Users\jshga\Documents\GitHub\2019-GSM-C-Project\Project_CSharp\obj\Debug\Project_CSharp.Properties.Resources.resources
+C:\Users\jshga\Documents\GitHub\2019-GSM-C-Project\Project_CSharp\obj\Debug\Project_CSharp.csproj.GenerateResource.cache
+C:\Users\jshga\Documents\GitHub\2019-GSM-C-Project\Project_CSharp\obj\Debug\Project_CSharp.csproj.CopyComplete
+C:\Users\jshga\Documents\GitHub\2019-GSM-C-Project\Project_CSharp\obj\Debug\Project_CSharp.exe
+C:\Users\jshga\Documents\GitHub\2019-GSM-C-Project\Project_CSharp\obj\Debug\Project_CSharp.pdb
