@@ -30,10 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Rank = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.Grade = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.Cash = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.Level = new System.Windows.Forms.TextBox();
@@ -64,10 +62,8 @@
             // panel1
             // 
             this.panel1.AutoScroll = true;
-            this.panel1.Controls.Add(this.Rank);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.Grade);
-            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.Cash);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.Level);
@@ -82,18 +78,10 @@
             this.panel1.Size = new System.Drawing.Size(541, 158);
             this.panel1.TabIndex = 0;
             // 
-            // Rank
-            // 
-            this.Rank.Location = new System.Drawing.Point(104, 132);
-            this.Rank.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Rank.Name = "Rank";
-            this.Rank.Size = new System.Drawing.Size(377, 21);
-            this.Rank.TabIndex = 11;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(52, 8);
+            this.label6.Location = new System.Drawing.Point(53, 21);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(47, 12);
             this.label6.TabIndex = 10;
@@ -101,24 +89,15 @@
             // 
             // Grade
             // 
-            this.Grade.Location = new System.Drawing.Point(104, 107);
+            this.Grade.Location = new System.Drawing.Point(105, 120);
             this.Grade.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Grade.Name = "Grade";
             this.Grade.Size = new System.Drawing.Size(377, 21);
             this.Grade.TabIndex = 9;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(65, 135);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(33, 12);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Rank";
-            // 
             // Cash
             // 
-            this.Cash.Location = new System.Drawing.Point(104, 82);
+            this.Cash.Location = new System.Drawing.Point(105, 95);
             this.Cash.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Cash.Name = "Cash";
             this.Cash.Size = new System.Drawing.Size(377, 21);
@@ -127,7 +106,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(63, 85);
+            this.label4.Location = new System.Drawing.Point(64, 98);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 12);
             this.label4.TabIndex = 6;
@@ -135,7 +114,7 @@
             // 
             // Level
             // 
-            this.Level.Location = new System.Drawing.Point(104, 57);
+            this.Level.Location = new System.Drawing.Point(105, 70);
             this.Level.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Level.Name = "Level";
             this.Level.Size = new System.Drawing.Size(377, 21);
@@ -144,7 +123,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(60, 110);
+            this.label3.Location = new System.Drawing.Point(61, 123);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 12);
             this.label3.TabIndex = 4;
@@ -152,7 +131,7 @@
             // 
             // User_Name
             // 
-            this.User_Name.Location = new System.Drawing.Point(104, 30);
+            this.User_Name.Location = new System.Drawing.Point(105, 43);
             this.User_Name.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.User_Name.Name = "User_Name";
             this.User_Name.Size = new System.Drawing.Size(377, 21);
@@ -161,7 +140,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(64, 60);
+            this.label2.Location = new System.Drawing.Point(65, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 12);
             this.label2.TabIndex = 2;
@@ -169,7 +148,7 @@
             // 
             // User_id
             // 
-            this.User_id.Location = new System.Drawing.Point(104, 5);
+            this.User_id.Location = new System.Drawing.Point(105, 18);
             this.User_id.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.User_id.Name = "User_id";
             this.User_id.Size = new System.Drawing.Size(377, 21);
@@ -178,7 +157,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(60, 33);
+            this.label1.Location = new System.Drawing.Point(61, 46);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 12);
             this.label1.TabIndex = 0;
@@ -188,7 +167,7 @@
             // 
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label7.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label7.Location = new System.Drawing.Point(139, 8);
+            this.label7.Location = new System.Drawing.Point(139, 9);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(329, 24);
             this.label7.TabIndex = 7;
@@ -372,7 +351,5 @@
         private System.Windows.Forms.Button TextEmpty;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox Grade;
-        private System.Windows.Forms.TextBox Rank;
-        private System.Windows.Forms.Label label5;
     }
 }

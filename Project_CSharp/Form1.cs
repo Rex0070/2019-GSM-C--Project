@@ -72,15 +72,14 @@ namespace Project_CSharp
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            string sql = "INSERT INTO basic_info (User_id, Name, Level, Cash, Grade, Rank) " +
-                "VALUES(@user_id, @name, @level, @cash, @grade, @rank)";
+            string sql = "INSERT INTO basic_info (User_id, Name, Level, Cash, Grade) " +
+                "VALUES(@user_id, @name, @level, @cash, @grade)";
             dataAdapter.InsertCommand = new MySqlCommand(sql, conn);
             dataAdapter.InsertCommand.Parameters.AddWithValue("@user_id", User_id.Text);
             dataAdapter.InsertCommand.Parameters.AddWithValue("@name", User_Name.Text);
             dataAdapter.InsertCommand.Parameters.AddWithValue("@level", Convert.ToInt32(Level.Text));
             dataAdapter.InsertCommand.Parameters.AddWithValue("@cash", Convert.ToInt32(Cash.Text));
             dataAdapter.InsertCommand.Parameters.AddWithValue("@grade", Convert.ToInt32(Grade.Text));
-            dataAdapter.InsertCommand.Parameters.AddWithValue("@rank", Convert.ToInt32(Rank.Text));
 
             DataRow newRow = dataSet.Tables["basic_info"].NewRow();
             newRow["User_id"] = User_id.Text;
@@ -88,7 +87,6 @@ namespace Project_CSharp
             newRow["Level"] = Convert.ToInt32(Level.Text);
             newRow["Cash"] = Convert.ToInt32(Cash.Text);
             newRow["Grade"] = Convert.ToInt32(Grade.Text);
-            newRow["Rank"] = Convert.ToInt32(Rank.Text);
             dataSet.Tables["basic_info"].Rows.Add(newRow);
 
             try

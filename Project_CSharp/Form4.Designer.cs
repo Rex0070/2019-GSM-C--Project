@@ -52,6 +52,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.부정행위자새로고침ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -80,6 +81,7 @@
             // 
             this.파일ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.가입자목록새로고침ToolStripMenuItem,
+            this.부정행위자새로고침ToolStripMenuItem,
             this.데이터베이스관리ToolStripMenuItem,
             this.toolStripSeparator1,
             this.끝내기ToolStripMenuItem});
@@ -89,16 +91,17 @@
             // 
             // 가입자목록새로고침ToolStripMenuItem
             // 
+            this.가입자목록새로고침ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("가입자목록새로고침ToolStripMenuItem.Image")));
             this.가입자목록새로고침ToolStripMenuItem.Name = "가입자목록새로고침ToolStripMenuItem";
-            this.가입자목록새로고침ToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
-            this.가입자목록새로고침ToolStripMenuItem.Text = "가입자 목록 새로고침";
+            this.가입자목록새로고침ToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.가입자목록새로고침ToolStripMenuItem.Text = "회원 목록 새로고침";
             this.가입자목록새로고침ToolStripMenuItem.Click += new System.EventHandler(this.가입자목록새로고침ToolStripMenuItem_Click);
             // 
             // 데이터베이스관리ToolStripMenuItem
             // 
             this.데이터베이스관리ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("데이터베이스관리ToolStripMenuItem.Image")));
             this.데이터베이스관리ToolStripMenuItem.Name = "데이터베이스관리ToolStripMenuItem";
-            this.데이터베이스관리ToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.데이터베이스관리ToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.데이터베이스관리ToolStripMenuItem.Text = "데이터베이스 관리";
             this.데이터베이스관리ToolStripMenuItem.Click += new System.EventHandler(this.데이터베이스관리ToolStripMenuItem_Click);
             // 
@@ -221,6 +224,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(6, 21);
             this.dataGridView1.Name = "dataGridView1";
@@ -281,12 +285,20 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(6, 21);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
             this.dataGridView2.Size = new System.Drawing.Size(467, 291);
             this.dataGridView2.TabIndex = 0;
+            // 
+            // 부정행위자새로고침ToolStripMenuItem
+            // 
+            this.부정행위자새로고침ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("부정행위자새로고침ToolStripMenuItem.Image")));
+            this.부정행위자새로고침ToolStripMenuItem.Name = "부정행위자새로고침ToolStripMenuItem";
+            this.부정행위자새로고침ToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.부정행위자새로고침ToolStripMenuItem.Text = "부정행위자 새로고침";
             // 
             // Form4
             // 
@@ -349,5 +361,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.ToolStripMenuItem 부정행위자새로고침ToolStripMenuItem;
     }
 }
