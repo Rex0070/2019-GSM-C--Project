@@ -128,14 +128,14 @@ namespace Project_CSharp
             }
         }
 
-        private void Customer_Click(object sender, EventArgs e)
+        private void player_info_Click(object sender, EventArgs e)
         {
             this.Visible = false;
             Form2 player_info = new Form2();
             player_info.ShowDialog();
         }
 
-        private void Book_Click(object sender, EventArgs e)
+        private void basic_info_Click(object sender, EventArgs e)
         {
             this.Visible = false;
             Form1 basic_info = new Form1();

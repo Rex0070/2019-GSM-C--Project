@@ -176,8 +176,8 @@ namespace Project_CSharp
         private void Profiles_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            Form3 order = new Form3();
-            order.ShowDialog();
+            Form3 profile = new Form3();
+            profile.ShowDialog();
         }
 
         private void TextEmpty_Click(object sender, EventArgs e)

@@ -47,8 +47,8 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Customer = new System.Windows.Forms.Button();
-            this.Book = new System.Windows.Forms.Button();
+            this.player_info = new System.Windows.Forms.Button();
+            this.basic_info = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textEmpty = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -231,8 +231,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.Customer);
-            this.groupBox1.Controls.Add(this.Book);
+            this.groupBox1.Controls.Add(this.player_info);
+            this.groupBox1.Controls.Add(this.basic_info);
             this.groupBox1.Location = new System.Drawing.Point(577, 24);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(263, 63);
@@ -240,27 +240,27 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "다른 목록 확인";
             // 
-            // Customer
+            // player_info
             // 
-            this.Customer.Location = new System.Drawing.Point(139, 19);
-            this.Customer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Customer.Name = "Customer";
-            this.Customer.Size = new System.Drawing.Size(118, 37);
-            this.Customer.TabIndex = 11;
-            this.Customer.Text = "플레이어 공개 정보";
-            this.Customer.UseVisualStyleBackColor = true;
-            this.Customer.Click += new System.EventHandler(this.Customer_Click);
+            this.player_info.Location = new System.Drawing.Point(139, 19);
+            this.player_info.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.player_info.Name = "player_info";
+            this.player_info.Size = new System.Drawing.Size(118, 37);
+            this.player_info.TabIndex = 11;
+            this.player_info.Text = "플레이어 공개 정보";
+            this.player_info.UseVisualStyleBackColor = true;
+            this.player_info.Click += new System.EventHandler(this.player_info_Click);
             // 
-            // Book
+            // basic_info
             // 
-            this.Book.Location = new System.Drawing.Point(6, 19);
-            this.Book.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Book.Name = "Book";
-            this.Book.Size = new System.Drawing.Size(118, 37);
-            this.Book.TabIndex = 10;
-            this.Book.Text = "기본 정보 목록";
-            this.Book.UseVisualStyleBackColor = true;
-            this.Book.Click += new System.EventHandler(this.Book_Click);
+            this.basic_info.Location = new System.Drawing.Point(6, 19);
+            this.basic_info.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.basic_info.Name = "basic_info";
+            this.basic_info.Size = new System.Drawing.Size(118, 37);
+            this.basic_info.TabIndex = 10;
+            this.basic_info.Text = "기본 정보 목록";
+            this.basic_info.UseVisualStyleBackColor = true;
+            this.basic_info.Click += new System.EventHandler(this.basic_info_Click);
             // 
             // groupBox2
             // 
@@ -342,8 +342,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button Customer;
-        private System.Windows.Forms.Button Book;
+        private System.Windows.Forms.Button player_info;
+        private System.Windows.Forms.Button basic_info;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox Age;

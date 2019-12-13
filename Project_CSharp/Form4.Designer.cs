@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.파일ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.가입자목록새로고침ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.회원목록새로고침ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.부정행위자새로고침ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.데이터베이스관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -80,7 +80,7 @@
             // 파일ToolStripMenuItem
             // 
             this.파일ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.가입자목록새로고침ToolStripMenuItem,
+            this.회원목록새로고침ToolStripMenuItem,
             this.부정행위자새로고침ToolStripMenuItem,
             this.데이터베이스관리ToolStripMenuItem,
             this.toolStripSeparator1,
@@ -89,13 +89,13 @@
             this.파일ToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.파일ToolStripMenuItem.Text = "UNICEF";
             // 
-            // 가입자목록새로고침ToolStripMenuItem
+            // 회원목록새로고침ToolStripMenuItem
             // 
-            this.가입자목록새로고침ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("가입자목록새로고침ToolStripMenuItem.Image")));
-            this.가입자목록새로고침ToolStripMenuItem.Name = "가입자목록새로고침ToolStripMenuItem";
-            this.가입자목록새로고침ToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.가입자목록새로고침ToolStripMenuItem.Text = "회원 목록 새로고침";
-            this.가입자목록새로고침ToolStripMenuItem.Click += new System.EventHandler(this.가입자목록새로고침ToolStripMenuItem_Click);
+            this.회원목록새로고침ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("회원목록새로고침ToolStripMenuItem.Image")));
+            this.회원목록새로고침ToolStripMenuItem.Name = "회원목록새로고침ToolStripMenuItem";
+            this.회원목록새로고침ToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.회원목록새로고침ToolStripMenuItem.Text = "회원 목록 새로고침";
+            this.회원목록새로고침ToolStripMenuItem.Click += new System.EventHandler(this.회원목록새로고침ToolStripMenuItem_Click);
             // 
             // 부정행위자새로고침ToolStripMenuItem
             // 
@@ -356,7 +356,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ToolStripMenuItem 가입자목록새로고침ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 회원목록새로고침ToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.PictureBox pictureBox2;

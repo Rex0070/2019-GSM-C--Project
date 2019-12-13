@@ -168,18 +168,18 @@ namespace Project_CSharp
             }
         }
 
-        private void Book_Click(object sender, EventArgs e)
+        private void Basic_info_Click(object sender, EventArgs e)
         {
             this.Visible = false;
             Form1 basic_info = new Form1();
             basic_info.ShowDialog();
         }
 
-        private void Order_Click(object sender, EventArgs e)
+        private void Profile_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            Form3 order = new Form3();
-            order.ShowDialog();
+            Form3 profile = new Form3();
+            profile.ShowDialog();
         }
 
         private void textEmpty_Click(object sender, EventArgs e)

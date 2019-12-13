@@ -120,7 +120,7 @@ namespace Project_CSharp
             }
         }
 
-        private void 가입자목록새로고침ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 회원목록새로고침ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (conn.State == ConnectionState.Open) {
                 dataAdapter = new MySqlDataAdapter("SELECT * FROM profile", conn);

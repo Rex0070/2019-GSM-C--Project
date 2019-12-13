@@ -47,7 +47,7 @@ namespace Project_CSharp
             this.btnDelete = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Order = new System.Windows.Forms.Button();
+            this.Profile = new System.Windows.Forms.Button();
             this.Basic_info = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textEmpty = new System.Windows.Forms.Button();
@@ -216,7 +216,7 @@ namespace Project_CSharp
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.Order);
+            this.groupBox1.Controls.Add(this.Profile);
             this.groupBox1.Controls.Add(this.Basic_info);
             this.groupBox1.Location = new System.Drawing.Point(577, 24);
             this.groupBox1.Name = "groupBox1";
@@ -225,16 +225,16 @@ namespace Project_CSharp
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "다른 목록 확인";
             // 
-            // Order
+            // Profile
             // 
-            this.Order.Location = new System.Drawing.Point(139, 19);
-            this.Order.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Order.Name = "Order";
-            this.Order.Size = new System.Drawing.Size(118, 37);
-            this.Order.TabIndex = 11;
-            this.Order.Text = "프로필 내역";
-            this.Order.UseVisualStyleBackColor = true;
-            this.Order.Click += new System.EventHandler(this.Order_Click);
+            this.Profile.Location = new System.Drawing.Point(139, 19);
+            this.Profile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Profile.Name = "Profile";
+            this.Profile.Size = new System.Drawing.Size(118, 37);
+            this.Profile.TabIndex = 11;
+            this.Profile.Text = "프로필 내역";
+            this.Profile.UseVisualStyleBackColor = true;
+            this.Profile.Click += new System.EventHandler(this.Profile_Click);
             // 
             // Basic_info
             // 
@@ -245,7 +245,7 @@ namespace Project_CSharp
             this.Basic_info.TabIndex = 10;
             this.Basic_info.Text = "기본 정보 목록";
             this.Basic_info.UseVisualStyleBackColor = true;
-            this.Basic_info.Click += new System.EventHandler(this.Book_Click);
+            this.Basic_info.Click += new System.EventHandler(this.Basic_info_Click);
             // 
             // groupBox2
             // 
@@ -344,7 +344,7 @@ namespace Project_CSharp
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button Order;
+        private System.Windows.Forms.Button Profile;
         private System.Windows.Forms.Button Basic_info;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
