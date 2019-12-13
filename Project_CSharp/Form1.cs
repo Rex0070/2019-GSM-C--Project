@@ -17,14 +17,13 @@ namespace Project_CSharp
         {
             InitializeComponent();
 
-            this.pictureBox1.Image = Image.FromFile(@"..\..\image\tenor.gif");
+            this.pictureBox1.Image = Image.FromFile(@"..\..\image\deepdarkfantasy.gif");
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         MySqlConnection conn;
         MySqlDataAdapter dataAdapter;
         DataSet dataSet;
-        string apppath = System.IO.Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath);
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -174,14 +173,7 @@ namespace Project_CSharp
             }
         }
 
-        private void Customer_Click(object sender, EventArgs e)
-        {
-            this.Visible = false;
-            Form2 customer = new Form2();
-            customer.ShowDialog();
-        }
-
-        private void Order_Click(object sender, EventArgs e)
+        private void Profiles_Click(object sender, EventArgs e)
         {
             this.Visible = false;
             Form3 order = new Form3();
@@ -202,14 +194,11 @@ namespace Project_CSharp
             dataGridView1.DataSource = dataSet.Tables["basic_info"];
         }
 
-        private void label7_Click(object sender, EventArgs e)
+        private void Player_info_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            this.Visible = false;
+            Form2 player_info = new Form2();
+            player_info.ShowDialog();
         }
     }
 }

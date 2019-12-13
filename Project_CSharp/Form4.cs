@@ -18,7 +18,6 @@ namespace Project_CSharp
         MySqlDataAdapter dataAdapter;
         MySqlDataAdapter dataAdapter2;
         DataSet dataSet;
-        string apppath = System.IO.Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath);
 
         public Form4()
         {
@@ -71,7 +70,7 @@ namespace Project_CSharp
         {
             if (conn.State == ConnectionState.Closed)
             {
-                string connectionString = "server=localhost;port=3306;username=root;password=1234";
+                string connectionString = "server=localhost;port=3306;username=root;database=mydb;password=1234;charset=UTF8"; ;
                 conn = new MySqlConnection(connectionString);
 
                 try
@@ -123,19 +122,38 @@ namespace Project_CSharp
 
         private void 가입자목록새로고침ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dataAdapter = new MySqlDataAdapter("SELECT * FROM profile", conn);
-            dataAdapter2 = new MySqlDataAdapter("SELECT * FROM cheat_has_player_info", conn);
-            dataSet = new DataSet();
+            if (conn.State == ConnectionState.Open) {
+                dataAdapter = new MySqlDataAdapter("SELECT * FROM profile", conn);
+                dataSet = new DataSet();
 
-            dataAdapter.Fill(dataSet, "profile");
-            dataAdapter2.Fill(dataSet, "cheat_has_player_info");
-            dataGridView1.DataSource = dataSet.Tables["profile"];
-            dataGridView2.DataSource = dataSet.Tables["cheat_has_player_info"];
+                dataAdapter.Fill(dataSet, "profile");
+                dataGridView1.DataSource = dataSet.Tables["profile"];
+            }
+            else
+            {
+                MessageBox.Show("DB 연결을 해주세요!", "UNICEF", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void 부정행위자새로고침ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (conn.State == ConnectionState.Open)
+            {
+                dataAdapter2 = new MySqlDataAdapter("SELECT * FROM cheat_has_player_info", conn);
+                dataSet = new DataSet();
+
+                dataAdapter2.Fill(dataSet, "cheat_has_player_info");
+                dataGridView2.DataSource = dataSet.Tables["cheat_has_player_info"];
+            }
+            else
+            {
+                MessageBox.Show("DB 연결을 해주세요!", "UNICEF", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

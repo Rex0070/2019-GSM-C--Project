@@ -30,17 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBoxOrderdate = new System.Windows.Forms.TextBox();
+            this.Age = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBoxSalePrice = new System.Windows.Forms.TextBox();
+            this.Email = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBoxBookId = new System.Windows.Forms.TextBox();
+            this.Phone_num = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBoxCustId = new System.Windows.Forms.TextBox();
+            this.Real_Name = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxOrderId = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.User_id = new System.Windows.Forms.Label();
             this.btnSelect = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -50,8 +50,8 @@
             this.Customer = new System.Windows.Forms.Button();
             this.Book = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textEmpty = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -62,100 +62,100 @@
             // panel1
             // 
             this.panel1.AutoScroll = true;
-            this.panel1.Controls.Add(this.textBoxOrderdate);
+            this.panel1.Controls.Add(this.Age);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.textBoxSalePrice);
-            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.Email);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.textBoxBookId);
+            this.panel1.Controls.Add(this.Phone_num);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBoxCustId);
+            this.panel1.Controls.Add(this.Real_Name);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.textBoxOrderId);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.User_id);
             this.panel1.Location = new System.Drawing.Point(26, 24);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(541, 168);
             this.panel1.TabIndex = 0;
             // 
-            // textBoxOrderdate
+            // Age
             // 
-            this.textBoxOrderdate.Location = new System.Drawing.Point(106, 132);
-            this.textBoxOrderdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxOrderdate.Name = "textBoxOrderdate";
-            this.textBoxOrderdate.Size = new System.Drawing.Size(378, 21);
-            this.textBoxOrderdate.TabIndex = 9;
+            this.Age.Location = new System.Drawing.Point(106, 132);
+            this.Age.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Age.Name = "Age";
+            this.Age.Size = new System.Drawing.Size(378, 21);
+            this.Age.TabIndex = 9;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(35, 135);
+            this.label5.Location = new System.Drawing.Point(72, 135);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 12);
+            this.label5.Size = new System.Drawing.Size(27, 12);
             this.label5.TabIndex = 8;
-            this.label5.Text = "Order Date";
+            this.label5.Text = "Age";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // textBoxSalePrice
+            // Email
             // 
-            this.textBoxSalePrice.Location = new System.Drawing.Point(106, 107);
-            this.textBoxSalePrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxSalePrice.Name = "textBoxSalePrice";
-            this.textBoxSalePrice.Size = new System.Drawing.Size(378, 21);
-            this.textBoxSalePrice.TabIndex = 7;
+            this.Email.Location = new System.Drawing.Point(106, 107);
+            this.Email.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Email.Name = "Email";
+            this.Email.Size = new System.Drawing.Size(378, 21);
+            this.Email.TabIndex = 7;
             // 
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label7.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label7.Location = new System.Drawing.Point(90, 0);
+            this.label7.Location = new System.Drawing.Point(139, 9);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(329, 24);
             this.label7.TabIndex = 7;
-            this.label7.Text = "GSM BOOK 시스템(관리자용) - 주문 내역";
+            this.label7.Text = "UNICEF 관리 시스템 - 프로필 내역";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(56, 85);
+            this.label4.Location = new System.Drawing.Point(27, 85);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 12);
+            this.label4.Size = new System.Drawing.Size(72, 12);
             this.label4.TabIndex = 6;
-            this.label4.Text = "BookID";
+            this.label4.Text = "Phone_num";
             // 
-            // textBoxBookId
+            // Phone_num
             // 
-            this.textBoxBookId.Location = new System.Drawing.Point(106, 82);
-            this.textBoxBookId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxBookId.Name = "textBoxBookId";
-            this.textBoxBookId.Size = new System.Drawing.Size(378, 21);
-            this.textBoxBookId.TabIndex = 5;
+            this.Phone_num.Location = new System.Drawing.Point(106, 82);
+            this.Phone_num.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Phone_num.Name = "Phone_num";
+            this.Phone_num.Size = new System.Drawing.Size(378, 21);
+            this.Phone_num.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(43, 110);
+            this.label3.Location = new System.Drawing.Point(57, 110);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 12);
+            this.label3.Size = new System.Drawing.Size(43, 12);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Saleprice";
+            this.label3.Text = "E-mail";
             // 
-            // textBoxCustId
+            // Real_Name
             // 
-            this.textBoxCustId.Location = new System.Drawing.Point(106, 55);
-            this.textBoxCustId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxCustId.Name = "textBoxCustId";
-            this.textBoxCustId.Size = new System.Drawing.Size(378, 21);
-            this.textBoxCustId.TabIndex = 3;
+            this.Real_Name.Location = new System.Drawing.Point(106, 55);
+            this.Real_Name.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Real_Name.Name = "Real_Name";
+            this.Real_Name.Size = new System.Drawing.Size(378, 21);
+            this.Real_Name.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(58, 58);
+            this.label2.Location = new System.Drawing.Point(30, 58);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 12);
+            this.label2.Size = new System.Drawing.Size(70, 12);
             this.label2.TabIndex = 2;
-            this.label2.Text = "CustID";
+            this.label2.Text = "Real_Name";
             // 
             // textBoxOrderId
             // 
@@ -165,14 +165,14 @@
             this.textBoxOrderId.Size = new System.Drawing.Size(378, 21);
             this.textBoxOrderId.TabIndex = 1;
             // 
-            // label1
+            // User_id
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(53, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 12);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "OrderID";
+            this.User_id.AutoSize = true;
+            this.User_id.Location = new System.Drawing.Point(53, 33);
+            this.User_id.Name = "User_id";
+            this.User_id.Size = new System.Drawing.Size(47, 12);
+            this.User_id.TabIndex = 0;
+            this.User_id.Text = "User_id";
             // 
             // btnSelect
             // 
@@ -247,7 +247,7 @@
             this.Customer.Name = "Customer";
             this.Customer.Size = new System.Drawing.Size(118, 37);
             this.Customer.TabIndex = 11;
-            this.Customer.Text = "소비자 목록";
+            this.Customer.Text = "플레이어 공개 정보";
             this.Customer.UseVisualStyleBackColor = true;
             this.Customer.Click += new System.EventHandler(this.Customer_Click);
             // 
@@ -258,7 +258,7 @@
             this.Book.Name = "Book";
             this.Book.Size = new System.Drawing.Size(118, 37);
             this.Book.TabIndex = 10;
-            this.Book.Text = "회원 목록";
+            this.Book.Text = "기본 정보 목록";
             this.Book.UseVisualStyleBackColor = true;
             this.Book.Click += new System.EventHandler(this.Book_Click);
             // 
@@ -276,16 +276,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "데이터 조작 메뉴";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Location = new System.Drawing.Point(577, 96);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(263, 172);
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
-            // 
             // textEmpty
             // 
             this.textEmpty.Location = new System.Drawing.Point(444, 19);
@@ -297,6 +287,16 @@
             this.textEmpty.UseVisualStyleBackColor = true;
             this.textEmpty.Click += new System.EventHandler(this.textEmpty_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Location = new System.Drawing.Point(577, 96);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(263, 172);
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -306,6 +306,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -326,14 +327,14 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBoxSalePrice;
+        private System.Windows.Forms.TextBox Email;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBoxBookId;
+        private System.Windows.Forms.TextBox Phone_num;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxCustId;
+        private System.Windows.Forms.TextBox Real_Name;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxOrderId;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label User_id;
         private System.Windows.Forms.Button btnSelect;
         private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.Button btnUpdate;
@@ -345,7 +346,7 @@
         private System.Windows.Forms.Button Book;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBoxOrderdate;
+        private System.Windows.Forms.TextBox Age;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button textEmpty;
     }

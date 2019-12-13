@@ -32,14 +32,14 @@ namespace Project_CSharp
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBoxPhone = new System.Windows.Forms.TextBox();
+            this.Win_Rate = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBoxAddress = new System.Windows.Forms.TextBox();
+            this.Play_Cham = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBoxUserName = new System.Windows.Forms.TextBox();
+            this.Play_Time = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBoxCustID = new System.Windows.Forms.TextBox();
+            this.User_id = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSelect = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
@@ -48,10 +48,12 @@ namespace Project_CSharp
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Order = new System.Windows.Forms.Button();
-            this.Book = new System.Windows.Forms.Button();
+            this.Basic_info = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textEmpty = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Favo_POS = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -62,98 +64,99 @@ namespace Project_CSharp
             // panel1
             // 
             this.panel1.AutoScroll = true;
-            this.panel1.Controls.Add(this.textBoxPhone);
-            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.Favo_POS);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.Win_Rate);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.textBoxAddress);
+            this.panel1.Controls.Add(this.Play_Cham);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBoxUserName);
+            this.panel1.Controls.Add(this.Play_Time);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textBoxCustID);
+            this.panel1.Controls.Add(this.User_id);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(26, 24);
+            this.panel1.Location = new System.Drawing.Point(26, 34);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(541, 158);
             this.panel1.TabIndex = 0;
             // 
-            // textBoxPhone
+            // Win_Rate
             // 
-            this.textBoxPhone.Location = new System.Drawing.Point(106, 119);
-            this.textBoxPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxPhone.Name = "textBoxPhone";
-            this.textBoxPhone.Size = new System.Drawing.Size(378, 21);
-            this.textBoxPhone.TabIndex = 7;
+            this.Win_Rate.Location = new System.Drawing.Point(108, 96);
+            this.Win_Rate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Win_Rate.Name = "Win_Rate";
+            this.Win_Rate.Size = new System.Drawing.Size(378, 21);
+            this.Win_Rate.TabIndex = 7;
             // 
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label7.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label7.Location = new System.Drawing.Point(81, 0);
+            this.label7.Location = new System.Drawing.Point(139, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(344, 24);
+            this.label7.Size = new System.Drawing.Size(358, 24);
             this.label7.TabIndex = 7;
-            this.label7.Text = "GSM BOOK 시스템(관리자용) - 회원 목록";
+            this.label7.Text = "UNICEF 관리 시스템 - 플레이어 공개정보 목록";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(48, 97);
+            this.label4.Location = new System.Drawing.Point(32, 74);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 12);
+            this.label4.Size = new System.Drawing.Size(70, 12);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Address";
+            this.label4.Text = "Play_Cham";
             // 
-            // textBoxAddress
+            // Play_Cham
             // 
-            this.textBoxAddress.Location = new System.Drawing.Point(106, 94);
-            this.textBoxAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxAddress.Name = "textBoxAddress";
-            this.textBoxAddress.Size = new System.Drawing.Size(378, 21);
-            this.textBoxAddress.TabIndex = 5;
+            this.Play_Cham.Location = new System.Drawing.Point(108, 71);
+            this.Play_Cham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Play_Cham.Name = "Play_Cham";
+            this.Play_Cham.Size = new System.Drawing.Size(378, 21);
+            this.Play_Cham.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(59, 122);
+            this.label3.Location = new System.Drawing.Point(46, 99);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 12);
+            this.label3.Size = new System.Drawing.Size(56, 12);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Phone";
+            this.label3.Text = "Win_Rate";
             // 
-            // textBoxUserName
+            // Play_Time
             // 
-            this.textBoxUserName.Location = new System.Drawing.Point(106, 67);
-            this.textBoxUserName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxUserName.Name = "textBoxUserName";
-            this.textBoxUserName.Size = new System.Drawing.Size(378, 21);
-            this.textBoxUserName.TabIndex = 3;
+            this.Play_Time.Location = new System.Drawing.Point(108, 44);
+            this.Play_Time.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Play_Time.Name = "Play_Time";
+            this.Play_Time.Size = new System.Drawing.Size(378, 21);
+            this.Play_Time.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(59, 70);
+            this.label2.Location = new System.Drawing.Point(37, 47);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 12);
+            this.label2.Size = new System.Drawing.Size(65, 12);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Name";
+            this.label2.Text = "Play_Time";
             // 
-            // textBoxCustID
+            // User_id
             // 
-            this.textBoxCustID.Location = new System.Drawing.Point(106, 42);
-            this.textBoxCustID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxCustID.Name = "textBoxCustID";
-            this.textBoxCustID.Size = new System.Drawing.Size(378, 21);
-            this.textBoxCustID.TabIndex = 1;
+            this.User_id.Location = new System.Drawing.Point(108, 19);
+            this.User_id.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.User_id.Name = "User_id";
+            this.User_id.Size = new System.Drawing.Size(378, 21);
+            this.User_id.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(58, 45);
+            this.label1.Location = new System.Drawing.Point(55, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 12);
+            this.label1.Size = new System.Drawing.Size(47, 12);
             this.label1.TabIndex = 0;
-            this.label1.Text = "CustID";
+            this.label1.Text = "User_id";
             // 
             // btnSelect
             // 
@@ -214,7 +217,7 @@ namespace Project_CSharp
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.Order);
-            this.groupBox1.Controls.Add(this.Book);
+            this.groupBox1.Controls.Add(this.Basic_info);
             this.groupBox1.Location = new System.Drawing.Point(577, 24);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(263, 63);
@@ -229,20 +232,20 @@ namespace Project_CSharp
             this.Order.Name = "Order";
             this.Order.Size = new System.Drawing.Size(118, 37);
             this.Order.TabIndex = 11;
-            this.Order.Text = "주문 내역";
+            this.Order.Text = "프로필 내역";
             this.Order.UseVisualStyleBackColor = true;
             this.Order.Click += new System.EventHandler(this.Order_Click);
             // 
-            // Book
+            // Basic_info
             // 
-            this.Book.Location = new System.Drawing.Point(6, 19);
-            this.Book.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Book.Name = "Book";
-            this.Book.Size = new System.Drawing.Size(118, 37);
-            this.Book.TabIndex = 10;
-            this.Book.Text = "도서 목록";
-            this.Book.UseVisualStyleBackColor = true;
-            this.Book.Click += new System.EventHandler(this.Book_Click);
+            this.Basic_info.Location = new System.Drawing.Point(6, 19);
+            this.Basic_info.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Basic_info.Name = "Basic_info";
+            this.Basic_info.Size = new System.Drawing.Size(118, 37);
+            this.Basic_info.TabIndex = 10;
+            this.Basic_info.Text = "기본 정보 목록";
+            this.Basic_info.UseVisualStyleBackColor = true;
+            this.Basic_info.Click += new System.EventHandler(this.Book_Click);
             // 
             // groupBox2
             // 
@@ -258,16 +261,6 @@ namespace Project_CSharp
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "데이터 조작 메뉴";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(577, 96);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(263, 172);
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
-            // 
             // textEmpty
             // 
             this.textEmpty.Location = new System.Drawing.Point(444, 19);
@@ -279,6 +272,33 @@ namespace Project_CSharp
             this.textEmpty.UseVisualStyleBackColor = true;
             this.textEmpty.Click += new System.EventHandler(this.textEmpty_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(577, 96);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(263, 172);
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
+            // Favo_POS
+            // 
+            this.Favo_POS.Location = new System.Drawing.Point(108, 121);
+            this.Favo_POS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Favo_POS.Name = "Favo_POS";
+            this.Favo_POS.Size = new System.Drawing.Size(378, 21);
+            this.Favo_POS.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(39, 124);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(63, 12);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Favo_POS";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -286,6 +306,7 @@ namespace Project_CSharp
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(867, 688);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
@@ -293,7 +314,7 @@ namespace Project_CSharp
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form2";
-            this.Text = "GSM BOOK - 소비자 목록";
+            this.Text = "UNICEF - 프로필 목록";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -308,13 +329,13 @@ namespace Project_CSharp
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBoxPhone;
+        private System.Windows.Forms.TextBox Win_Rate;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBoxAddress;
+        private System.Windows.Forms.TextBox Play_Cham;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxUserName;
+        private System.Windows.Forms.TextBox Play_Time;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxCustID;
+        private System.Windows.Forms.TextBox User_id;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSelect;
         private System.Windows.Forms.Button btnInsert;
@@ -324,9 +345,11 @@ namespace Project_CSharp
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button Order;
-        private System.Windows.Forms.Button Book;
+        private System.Windows.Forms.Button Basic_info;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button textEmpty;
+        private System.Windows.Forms.TextBox Favo_POS;
+        private System.Windows.Forms.Label label5;
     }
 }

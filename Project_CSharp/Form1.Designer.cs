@@ -47,8 +47,8 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Order = new System.Windows.Forms.Button();
-            this.Customer = new System.Windows.Forms.Button();
+            this.Profile = new System.Windows.Forms.Button();
+            this.Player_info = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.TextEmpty = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -172,7 +172,6 @@
             this.label7.Size = new System.Drawing.Size(329, 24);
             this.label7.TabIndex = 7;
             this.label7.Text = "UNICEF 관리 시스템 - 기본 정보 목록";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // btnSelect
             // 
@@ -229,12 +228,11 @@
             this.dataGridView1.RowTemplate.Height = 27;
             this.dataGridView1.Size = new System.Drawing.Size(814, 374);
             this.dataGridView1.TabIndex = 8;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.Order);
-            this.groupBox1.Controls.Add(this.Customer);
+            this.groupBox1.Controls.Add(this.Profile);
+            this.groupBox1.Controls.Add(this.Player_info);
             this.groupBox1.Location = new System.Drawing.Point(577, 24);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(263, 63);
@@ -242,27 +240,27 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "다른 목록 확인";
             // 
-            // Order
+            // Profile
             // 
-            this.Order.Location = new System.Drawing.Point(139, 19);
-            this.Order.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Order.Name = "Order";
-            this.Order.Size = new System.Drawing.Size(118, 37);
-            this.Order.TabIndex = 11;
-            this.Order.Text = "주문 내역";
-            this.Order.UseVisualStyleBackColor = true;
-            this.Order.Click += new System.EventHandler(this.Order_Click);
+            this.Profile.Location = new System.Drawing.Point(139, 19);
+            this.Profile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Profile.Name = "Profile";
+            this.Profile.Size = new System.Drawing.Size(118, 37);
+            this.Profile.TabIndex = 11;
+            this.Profile.Text = "프로필 내역";
+            this.Profile.UseVisualStyleBackColor = true;
+            this.Profile.Click += new System.EventHandler(this.Profiles_Click);
             // 
-            // Customer
+            // Player_info
             // 
-            this.Customer.Location = new System.Drawing.Point(6, 19);
-            this.Customer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Customer.Name = "Customer";
-            this.Customer.Size = new System.Drawing.Size(118, 37);
-            this.Customer.TabIndex = 10;
-            this.Customer.Text = "회원 목록";
-            this.Customer.UseVisualStyleBackColor = true;
-            this.Customer.Click += new System.EventHandler(this.Customer_Click);
+            this.Player_info.Location = new System.Drawing.Point(6, 19);
+            this.Player_info.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Player_info.Name = "Player_info";
+            this.Player_info.Size = new System.Drawing.Size(118, 37);
+            this.Player_info.TabIndex = 10;
+            this.Player_info.Text = "플레이어 공개정보";
+            this.Player_info.UseVisualStyleBackColor = true;
+            this.Player_info.Click += new System.EventHandler(this.Player_info_Click);
             // 
             // groupBox2
             // 
@@ -344,8 +342,8 @@
         private System.Windows.Forms.Label label7;
         public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button Order;
-        private System.Windows.Forms.Button Customer;
+        private System.Windows.Forms.Button Profile;
+        private System.Windows.Forms.Button Player_info;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button TextEmpty;

@@ -25,33 +25,33 @@ namespace Project_CSharp
         private void Form3_Load(object sender, EventArgs e)
         {
             conn = new MySqlConnection("server=localhost;port=3306;database=mydb;uid=root;pwd=1234;charset=UTF8");
-            dataAdapter = new MySqlDataAdapter("SELECT * FROM orders", conn);
+            dataAdapter = new MySqlDataAdapter("SELECT * FROM profile", conn);
             dataSet = new DataSet();
 
-            dataAdapter.Fill(dataSet, "orders");
-            dataGridView1.DataSource = dataSet.Tables["orders"];
+            dataAdapter.Fill(dataSet, "profile");
+            dataGridView1.DataSource = dataSet.Tables["profile"];
         }
 
         private void btnSelect_Click(object sender, EventArgs e)
         {
-            string sql = "SELECT * FROM orders WHERE custid=@custid";
+            string sql = "SELECT * FROM profile WHERE User_id=@user_id";
             dataAdapter.SelectCommand = new MySqlCommand(sql, conn);
-            dataAdapter.SelectCommand.Parameters.AddWithValue("@custid", textBoxCustId.Text);
+            dataAdapter.SelectCommand.Parameters.AddWithValue("@user_id", User_id.Text);
 
             try
             {
                 conn.Open();
                 dataSet.Clear();
-                if (dataAdapter.Fill(dataSet, "orders") > 0)
-                    dataGridView1.DataSource = dataSet.Tables["orders"];
+                if (dataAdapter.Fill(dataSet, "profile") > 0)
+                    dataGridView1.DataSource = dataSet.Tables["profile"];
                 else
                 {
                     MessageBox.Show("검색된 데이터가 없습니다.");
-                    dataAdapter = new MySqlDataAdapter("SELECT * FROM orders", conn);
+                    dataAdapter = new MySqlDataAdapter("SELECT * FROM profile", conn);
                     dataSet = new DataSet();
 
-                    dataAdapter.Fill(dataSet, "orders");
-                    dataGridView1.DataSource = dataSet.Tables["orders"];
+                    dataAdapter.Fill(dataSet, "profile");
+                    dataGridView1.DataSource = dataSet.Tables["profile"];
                 }
             }
             catch (Exception ex)
@@ -66,13 +66,13 @@ namespace Project_CSharp
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            string sql = "UPDATE orders SET bookid=@bookid WHERE orderid=@orderid";
+            string sql = "UPDATE profile SET Real_Name=@real_name WHERE User_id=@user_id";
             dataAdapter.UpdateCommand = new MySqlCommand(sql, conn);
-            dataAdapter.UpdateCommand.Parameters.AddWithValue("@orderid", textBoxOrderId.Text);
-            dataAdapter.UpdateCommand.Parameters.AddWithValue("@custid", textBoxCustId.Text);
-            dataAdapter.UpdateCommand.Parameters.AddWithValue("@bookid", textBoxBookId.Text);
-            dataAdapter.UpdateCommand.Parameters.AddWithValue("@saleprice", textBoxSalePrice.Text);
-            dataAdapter.UpdateCommand.Parameters.AddWithValue("@orderdate", textBoxOrderdate.Text);
+            dataAdapter.UpdateCommand.Parameters.AddWithValue("@user_id", User_id.Text);
+            dataAdapter.UpdateCommand.Parameters.AddWithValue("@real_name", Real_Name.Text);
+            dataAdapter.UpdateCommand.Parameters.AddWithValue("@phone_num", Phone_num.Text);
+            dataAdapter.UpdateCommand.Parameters.AddWithValue("@email", Email.Text);
+            dataAdapter.UpdateCommand.Parameters.AddWithValue("@age", Convert.ToInt32(Age.Text));
 
             try
             {
@@ -81,8 +81,8 @@ namespace Project_CSharp
                 if (dataAdapter.UpdateCommand.ExecuteNonQuery() > 0)
                 {
                     dataSet.Clear();
-                    dataAdapter.Fill(dataSet, "orders");
-                    dataGridView1.DataSource = dataSet.Tables["orders"];
+                    dataAdapter.Fill(dataSet, "profile");
+                    dataGridView1.DataSource = dataSet.Tables["profile"];
                 }
                 else
                     MessageBox.Show("수정된 데이터가 없습니다.");
@@ -99,10 +99,10 @@ namespace Project_CSharp
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            string sql = "DELETE FROM orders WHERE orderid=@orderid";
+            string sql = "DELETE FROM profile WHERE User_id=@userid";
             dataAdapter.DeleteCommand = new MySqlCommand(sql, conn);
-            int id = (int)dataGridView1.SelectedRows[0].Cells["orderid"].Value;
-            dataAdapter.DeleteCommand.Parameters.AddWithValue("@orderid", id);
+            int id = (int)dataGridView1.SelectedRows[0].Cells["User_id"].Value;
+            dataAdapter.DeleteCommand.Parameters.AddWithValue("@userid", id);
 
             try
             {
@@ -110,8 +110,8 @@ namespace Project_CSharp
                 if (dataAdapter.DeleteCommand.ExecuteNonQuery() > 0)
                 {
                     dataSet.Clear();
-                    dataAdapter.Fill(dataSet, "orders");
-                    dataGridView1.DataSource = dataSet.Tables["orders"];
+                    dataAdapter.Fill(dataSet, "profile");
+                    dataGridView1.DataSource = dataSet.Tables["profile"];
                 }
                 else
                 {
@@ -131,41 +131,43 @@ namespace Project_CSharp
         private void Customer_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            Form2 customer = new Form2();
-            customer.ShowDialog();
+            Form2 player_info = new Form2();
+            player_info.ShowDialog();
         }
 
         private void Book_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            Form1 book = new Form1();
-            book.ShowDialog();
+            Form1 basic_info = new Form1();
+            basic_info.ShowDialog();
         }
 
         private void btnInsert_Click_1(object sender, EventArgs e)
         {
-            string sql = "INSERT INTO orders (custid, bookid, saleprice, orderdate) " +
-                "VALUES(@custid, @bookid, @saleprice, @orderdate)";
+            string sql = "INSERT INTO profile (User_id, Real_Name, Phone_num, E-mail, Age) " +
+                "VALUES(@user_id, @real_name, @phone_num, @email, @age)";
             dataAdapter.InsertCommand = new MySqlCommand(sql, conn);
-            dataAdapter.InsertCommand.Parameters.AddWithValue("@custid", textBoxCustId.Text);
-            dataAdapter.InsertCommand.Parameters.AddWithValue("@bookid", textBoxBookId.Text);
-            dataAdapter.InsertCommand.Parameters.AddWithValue("@saleprice", textBoxSalePrice.Text);
-            dataAdapter.InsertCommand.Parameters.AddWithValue("@orderdate", textBoxOrderdate.Text);
+            dataAdapter.InsertCommand.Parameters.AddWithValue("@user_id", User_id.Text);
+            dataAdapter.InsertCommand.Parameters.AddWithValue("@real_name", Real_Name.Text);
+            dataAdapter.InsertCommand.Parameters.AddWithValue("@phone_num", Phone_num.Text);
+            dataAdapter.InsertCommand.Parameters.AddWithValue("@email", Email.Text);
+            dataAdapter.InsertCommand.Parameters.AddWithValue("@age", Convert.ToInt32(Age.Text));
 
-            DataRow newRow = dataSet.Tables["orders"].NewRow();
-            newRow["custid"] = textBoxCustId.Text;
-            newRow["bookid"] = textBoxBookId.Text;
-            newRow["saleprice"] = textBoxSalePrice.Text;
-            newRow["orderdate"] = textBoxOrderdate.Text;
+            DataRow newRow = dataSet.Tables["profile"].NewRow();
+            newRow["User_id"] = User_id.Text;
+            newRow["Real_Name"] = Real_Name.Text;
+            newRow["Phone_num"] = Phone_num.Text;
+            newRow["E-mail"] = Email.Text;
+            newRow["Age"] = Convert.ToInt32(Age.Text);
             dataSet.Tables["orders"].Rows.Add(newRow);
 
             try
             {
-                if (dataAdapter.Update(dataSet, "orders") > 0)
+                if (dataAdapter.Update(dataSet, "profile") > 0)
                 {
                     dataSet.Clear();
-                    dataAdapter.Fill(dataSet, "orders");
-                    dataGridView1.DataSource = dataSet.Tables["orders"];
+                    dataAdapter.Fill(dataSet, "profile");
+                    dataGridView1.DataSource = dataSet.Tables["profile"];
                 }
                 else
                     MessageBox.Show("검색된 데이터가 없습니다.");
@@ -183,16 +185,21 @@ namespace Project_CSharp
         private void textEmpty_Click(object sender, EventArgs e)
         {
             textBoxOrderId.Text = "";
-            textBoxBookId.Text = "";
-            textBoxCustId.Text = "";
-            textBoxSalePrice.Text = "";
-            textBoxOrderdate.Text = "";
+            Phone_num.Text = "";
+            Real_Name.Text = "";
+            Email.Text = "";
+            Age.Text = "";
 
-            dataAdapter = new MySqlDataAdapter("SELECT * FROM orders", conn);
+            dataAdapter = new MySqlDataAdapter("SELECT * FROM profile", conn);
             dataSet = new DataSet();
 
-            dataAdapter.Fill(dataSet, "orders");
-            dataGridView1.DataSource = dataSet.Tables["orders"];
+            dataAdapter.Fill(dataSet, "profile");
+            dataGridView1.DataSource = dataSet.Tables["profile"];
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

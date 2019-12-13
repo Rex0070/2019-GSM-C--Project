@@ -32,6 +32,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.파일ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.가입자목록새로고침ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.부정행위자새로고침ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.데이터베이스관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.끝내기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,7 +53,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.부정행위자새로고침ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -97,6 +97,14 @@
             this.가입자목록새로고침ToolStripMenuItem.Text = "회원 목록 새로고침";
             this.가입자목록새로고침ToolStripMenuItem.Click += new System.EventHandler(this.가입자목록새로고침ToolStripMenuItem_Click);
             // 
+            // 부정행위자새로고침ToolStripMenuItem
+            // 
+            this.부정행위자새로고침ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("부정행위자새로고침ToolStripMenuItem.Image")));
+            this.부정행위자새로고침ToolStripMenuItem.Name = "부정행위자새로고침ToolStripMenuItem";
+            this.부정행위자새로고침ToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.부정행위자새로고침ToolStripMenuItem.Text = "부정행위자 새로고침";
+            this.부정행위자새로고침ToolStripMenuItem.Click += new System.EventHandler(this.부정행위자새로고침ToolStripMenuItem_Click);
+            // 
             // 데이터베이스관리ToolStripMenuItem
             // 
             this.데이터베이스관리ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("데이터베이스관리ToolStripMenuItem.Image")));
@@ -108,13 +116,13 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(187, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(183, 6);
             // 
             // 끝내기ToolStripMenuItem
             // 
             this.끝내기ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("끝내기ToolStripMenuItem.Image")));
             this.끝내기ToolStripMenuItem.Name = "끝내기ToolStripMenuItem";
-            this.끝내기ToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.끝내기ToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.끝내기ToolStripMenuItem.Text = "끝내기";
             this.끝내기ToolStripMenuItem.Click += new System.EventHandler(this.끝내기ToolStripMenuItem_Click);
             // 
@@ -292,13 +300,6 @@
             this.dataGridView2.RowTemplate.Height = 23;
             this.dataGridView2.Size = new System.Drawing.Size(467, 291);
             this.dataGridView2.TabIndex = 0;
-            // 
-            // 부정행위자새로고침ToolStripMenuItem
-            // 
-            this.부정행위자새로고침ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("부정행위자새로고침ToolStripMenuItem.Image")));
-            this.부정행위자새로고침ToolStripMenuItem.Name = "부정행위자새로고침ToolStripMenuItem";
-            this.부정행위자새로고침ToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.부정행위자새로고침ToolStripMenuItem.Text = "부정행위자 새로고침";
             // 
             // Form4
             // 
