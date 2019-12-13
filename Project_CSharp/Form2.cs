@@ -16,6 +16,8 @@ namespace Project_CSharp
         public Form2()
         {
             InitializeComponent();
+            this.pictureBox1.Image = Image.FromFile(@"..\..\image\bigboyanggif.gif");
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage; 
         }
 
         MySqlConnection conn;

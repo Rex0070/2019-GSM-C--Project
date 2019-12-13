@@ -33,7 +33,6 @@
             this.Age = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.Email = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Phone_num = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,6 +40,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxOrderId = new System.Windows.Forms.TextBox();
             this.User_id = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.btnSelect = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -104,16 +104,6 @@
             this.Email.Size = new System.Drawing.Size(378, 21);
             this.Email.TabIndex = 7;
             // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label7.Location = new System.Drawing.Point(139, 9);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(329, 24);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "UNICEF 관리 시스템 - 프로필 내역";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -173,6 +163,16 @@
             this.User_id.Size = new System.Drawing.Size(47, 12);
             this.User_id.TabIndex = 0;
             this.User_id.Text = "User_id";
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label7.Location = new System.Drawing.Point(139, 9);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(329, 24);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "UNICEF 관리 시스템 - 프로필 내역";
             // 
             // btnSelect
             // 
@@ -289,7 +289,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.Location = new System.Drawing.Point(577, 96);
             this.pictureBox1.Name = "pictureBox1";

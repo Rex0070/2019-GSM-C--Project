@@ -32,8 +32,9 @@ namespace Project_CSharp
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Favo_POS = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.Win_Rate = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Play_Cham = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,6 +42,7 @@ namespace Project_CSharp
             this.label2 = new System.Windows.Forms.Label();
             this.User_id = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.btnSelect = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -52,8 +54,6 @@ namespace Project_CSharp
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textEmpty = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Favo_POS = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -80,6 +80,23 @@ namespace Project_CSharp
             this.panel1.Size = new System.Drawing.Size(541, 158);
             this.panel1.TabIndex = 0;
             // 
+            // Favo_POS
+            // 
+            this.Favo_POS.Location = new System.Drawing.Point(108, 121);
+            this.Favo_POS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Favo_POS.Name = "Favo_POS";
+            this.Favo_POS.Size = new System.Drawing.Size(378, 21);
+            this.Favo_POS.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(39, 124);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(63, 12);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Favo_POS";
+            // 
             // Win_Rate
             // 
             this.Win_Rate.Location = new System.Drawing.Point(108, 96);
@@ -87,16 +104,6 @@ namespace Project_CSharp
             this.Win_Rate.Name = "Win_Rate";
             this.Win_Rate.Size = new System.Drawing.Size(378, 21);
             this.Win_Rate.TabIndex = 7;
-            // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label7.Location = new System.Drawing.Point(139, 9);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(358, 24);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "UNICEF 관리 시스템 - 플레이어 공개정보 목록";
             // 
             // label4
             // 
@@ -157,6 +164,16 @@ namespace Project_CSharp
             this.label1.Size = new System.Drawing.Size(47, 12);
             this.label1.TabIndex = 0;
             this.label1.Text = "User_id";
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label7.Location = new System.Drawing.Point(139, 9);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(358, 24);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "UNICEF 관리 시스템 - 플레이어 공개정보 목록";
             // 
             // btnSelect
             // 
@@ -274,30 +291,12 @@ namespace Project_CSharp
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Location = new System.Drawing.Point(577, 96);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(263, 172);
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
-            // 
-            // Favo_POS
-            // 
-            this.Favo_POS.Location = new System.Drawing.Point(108, 121);
-            this.Favo_POS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Favo_POS.Name = "Favo_POS";
-            this.Favo_POS.Size = new System.Drawing.Size(378, 21);
-            this.Favo_POS.TabIndex = 9;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(39, 124);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 12);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Favo_POS";
             // 
             // Form2
             // 
