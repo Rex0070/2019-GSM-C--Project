@@ -38,7 +38,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.Level = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.Name = new System.Windows.Forms.TextBox();
+            this.User_Name = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.User_id = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -72,7 +72,7 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.Level);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.Name);
+            this.panel1.Controls.Add(this.User_Name);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.User_id);
             this.panel1.Controls.Add(this.label1);
@@ -150,13 +150,13 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Grade";
             // 
-            // Name
+            // User_Name
             // 
-            this.Name.Location = new System.Drawing.Point(104, 30);
-            this.Name.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name.Name = "Name";
-            this.Name.Size = new System.Drawing.Size(377, 21);
-            this.Name.TabIndex = 3;
+            this.User_Name.Location = new System.Drawing.Point(104, 30);
+            this.User_Name.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.User_Name.Name = "User_Name";
+            this.User_Name.Size = new System.Drawing.Size(377, 21);
+            this.User_Name.TabIndex = 3;
             // 
             // label2
             // 
@@ -250,6 +250,7 @@
             this.dataGridView1.RowTemplate.Height = 27;
             this.dataGridView1.Size = new System.Drawing.Size(814, 374);
             this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // groupBox1
             // 
@@ -333,7 +334,8 @@
             this.Controls.Add(this.label7);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Text = "GSM BOOK - 도서 목록";
+            this.Name = "Form1";
+            this.Text = "UNICEF - 기본 정보 목록";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -352,7 +354,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox Level;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox Name;
+        private System.Windows.Forms.TextBox User_Name;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox User_id;
         private System.Windows.Forms.Label label1;
@@ -368,9 +370,9 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button TextEmpty;
-        private System.Windows.Forms.TextBox Rank;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox Grade;
+        private System.Windows.Forms.TextBox Rank;
         private System.Windows.Forms.Label label5;
     }
 }

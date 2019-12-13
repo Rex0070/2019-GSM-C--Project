@@ -40,7 +40,7 @@ namespace Project_CSharp
         {
             string sql = "SELECT * FROM basic_info WHERE User_id=@user_id";
             dataAdapter.SelectCommand = new MySqlCommand(sql, conn);
-            dataAdapter.SelectCommand.Parameters.AddWithValue("@user_id", Rank.Text);
+            dataAdapter.SelectCommand.Parameters.AddWithValue("@user_id", User_id.Text);
 
             try
             {
@@ -76,7 +76,7 @@ namespace Project_CSharp
                 "VALUES(@user_id, @name, @level, @cash, @grade, @rank)";
             dataAdapter.InsertCommand = new MySqlCommand(sql, conn);
             dataAdapter.InsertCommand.Parameters.AddWithValue("@user_id", User_id.Text);
-            dataAdapter.InsertCommand.Parameters.AddWithValue("@name", Name.Text);
+            dataAdapter.InsertCommand.Parameters.AddWithValue("@name", User_Name.Text);
             dataAdapter.InsertCommand.Parameters.AddWithValue("@level", Convert.ToInt32(Level.Text));
             dataAdapter.InsertCommand.Parameters.AddWithValue("@cash", Convert.ToInt32(Cash.Text));
             dataAdapter.InsertCommand.Parameters.AddWithValue("@grade", Convert.ToInt32(Grade.Text));
@@ -84,7 +84,7 @@ namespace Project_CSharp
 
             DataRow newRow = dataSet.Tables["basic_info"].NewRow();
             newRow["User_id"] = User_id.Text;
-            newRow["Name"] = Name.Text;
+            newRow["Name"] = User_Name.Text;
             newRow["Level"] = Convert.ToInt32(Level.Text);
             newRow["Cash"] = Convert.ToInt32(Cash.Text);
             newRow["Grade"] = Convert.ToInt32(Grade.Text);
@@ -114,12 +114,13 @@ namespace Project_CSharp
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            string sql = "UPDATE book SET bookname=@bookname WHERE publisher=@publisher";
+            string sql = "UPDATE basic_info SET Name=@Name WHERE User_id=@user_id";
             dataAdapter.UpdateCommand = new MySqlCommand(sql, conn);
-            dataAdapter.UpdateCommand.Parameters.AddWithValue("@bookid", User_id.Text);
-            dataAdapter.UpdateCommand.Parameters.AddWithValue("@bookname", Name.Text);
-            dataAdapter.UpdateCommand.Parameters.AddWithValue("@publisher", Level.Text);
-            dataAdapter.UpdateCommand.Parameters.AddWithValue("@price", Level.Text);
+            dataAdapter.UpdateCommand.Parameters.AddWithValue("@user_id", User_id.Text);
+            dataAdapter.UpdateCommand.Parameters.AddWithValue("@name", User_Name.Text);
+            dataAdapter.UpdateCommand.Parameters.AddWithValue("@level", Convert.ToInt32(Level.Text));
+            dataAdapter.UpdateCommand.Parameters.AddWithValue("@cash", Convert.ToInt32(Cash.Text));
+            dataAdapter.UpdateCommand.Parameters.AddWithValue("@grade", Convert.ToInt32(Grade.Text));
 
             try
             {
@@ -128,8 +129,8 @@ namespace Project_CSharp
                 if (dataAdapter.UpdateCommand.ExecuteNonQuery() > 0)
                 {
                     dataSet.Clear();
-                    dataAdapter.Fill(dataSet, "book");
-                    dataGridView1.DataSource = dataSet.Tables["book"];
+                    dataAdapter.Fill(dataSet, "basic_info");
+                    dataGridView1.DataSource = dataSet.Tables["basic_info"];
                 }
                 else
                     MessageBox.Show("수정된 데이터가 없습니다.");
@@ -148,7 +149,7 @@ namespace Project_CSharp
         {
             string sql = "DELETE FROM basic_info WHERE User_id=@user_id";
             dataAdapter.DeleteCommand = new MySqlCommand(sql, conn);
-            int id = (int)dataGridView1.SelectedRows[0].Cells["User_id"].Value;
+            string id = (string)dataGridView1.SelectedRows[0].Cells["User_id"].Value;
             dataAdapter.DeleteCommand.Parameters.AddWithValue("@user_id", id);
 
             try
@@ -192,7 +193,7 @@ namespace Project_CSharp
         private void TextEmpty_Click(object sender, EventArgs e)
         {
             User_id.Text = "";
-            Name.Text = "";
+            User_Name.Text = "";
             Level.Text = "";
             Cash.Text = "";
 
@@ -204,6 +205,11 @@ namespace Project_CSharp
         }
 
         private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
