@@ -38,7 +38,7 @@ namespace Project_CSharp
 
         private void btnSelect_Click(object sender, EventArgs e)
         {
-            string sql = "SELECT * FROM player_info WHERE User_id=@user_id";
+            string sql = "SELECT * FROM player_info WHERE User_ID=@user_id";
             dataAdapter.SelectCommand = new MySqlCommand(sql, conn);
             dataAdapter.SelectCommand.Parameters.AddWithValue("@user_id", User_id.Text);
 
@@ -70,7 +70,7 @@ namespace Project_CSharp
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            string sql = "INSERT INTO player_info (User_id, Play_Time, Play_Cham, Win_Rate, Favo_POS) " +
+            string sql = "INSERT INTO player_info (User_ID, Play_Time, Play_Cham, Win_Rate, Favo_POS) " +
                 "VALUES(@user_id, @play_time, @play_cham, @win_rate, @favo_pos)";
             dataAdapter.InsertCommand = new MySqlCommand(sql, conn);
             dataAdapter.InsertCommand.Parameters.AddWithValue("@user_id", User_id.Text);
@@ -110,7 +110,7 @@ namespace Project_CSharp
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            string sql = "UPDATE player_info SET Play_Time=@play_time WHERE User_id=@user_id";
+            string sql = "UPDATE player_info SET Play_Time=@play_time, Play_Cham=@play_cham, Win_Rate=@win_rate, Favo_POS=@favo_pos WHERE User_ID=@user_id";
             dataAdapter.UpdateCommand = new MySqlCommand(sql, conn);
             dataAdapter.UpdateCommand.Parameters.AddWithValue("@user_id", User_id.Text);
             dataAdapter.UpdateCommand.Parameters.AddWithValue("@play_time", Convert.ToInt32(Play_Time.Text));
@@ -145,7 +145,7 @@ namespace Project_CSharp
         {
             string sql = "DELETE FROM player_info WHERE User_id=@user_id";
             dataAdapter.DeleteCommand = new MySqlCommand(sql, conn);
-            int id = (int)dataGridView1.SelectedRows[0].Cells["User_id"].Value;
+            string id = (string)dataGridView1.SelectedRows[0].Cells["User_id"].Value;
             dataAdapter.DeleteCommand.Parameters.AddWithValue("@user_id", id);
 
             try
@@ -192,6 +192,7 @@ namespace Project_CSharp
             Play_Time.Text = "";
             Play_Cham.Text = "";
             Win_Rate.Text = "";
+            Favo_POS.Text = "";
 
             dataAdapter = new MySqlDataAdapter("SELECT * FROM player_info", conn);
             dataSet = new DataSet();
@@ -244,7 +245,7 @@ namespace Project_CSharp
             }
         }
 
-        private void SaveExcelFile(string fileName)
+        private void SaveExcelFile(string filePath)
         {
             Microsoft.Office.Interop.Excel.Application eApp;
             Microsoft.Office.Interop.Excel.Workbook eWorkbook;

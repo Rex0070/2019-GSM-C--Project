@@ -70,7 +70,7 @@ namespace Project_CSharp
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            string sql = "UPDATE profile SET Real_Name=@real_name WHERE User_id=@user_id";
+            string sql = "UPDATE profile SET Real_Name=@real_name, Phone_num=@phone_num, Email=@email, Age=@age WHERE User_id=@user_id";
             dataAdapter.UpdateCommand = new MySqlCommand(sql, conn);
             dataAdapter.UpdateCommand.Parameters.AddWithValue("@user_id", User_id.Text);
             dataAdapter.UpdateCommand.Parameters.AddWithValue("@real_name", Real_Name.Text);
@@ -103,10 +103,10 @@ namespace Project_CSharp
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            string sql = "DELETE FROM profile WHERE User_id=@userid";
+            string sql = "DELETE FROM profile WHERE User_id=@user_id";
             dataAdapter.DeleteCommand = new MySqlCommand(sql, conn);
-            int id = (int)dataGridView1.SelectedRows[0].Cells["User_id"].Value;
-            dataAdapter.DeleteCommand.Parameters.AddWithValue("@userid", id);
+            string id = (string)dataGridView1.SelectedRows[0].Cells["User_id"].Value;
+            dataAdapter.DeleteCommand.Parameters.AddWithValue("@user_id", id);
 
             try
             {
@@ -146,49 +146,9 @@ namespace Project_CSharp
             basic_info.ShowDialog();
         }
 
-        private void btnInsert_Click_1(object sender, EventArgs e)
-        {
-            string sql = "INSERT INTO profile (User_id, Real_Name, Phone_num, E-mail, Age) " +
-                "VALUES(@user_id, @real_name, @phone_num, @email, @age)";
-            dataAdapter.InsertCommand = new MySqlCommand(sql, conn);
-            dataAdapter.InsertCommand.Parameters.AddWithValue("@user_id", User_id.Text);
-            dataAdapter.InsertCommand.Parameters.AddWithValue("@real_name", Real_Name.Text);
-            dataAdapter.InsertCommand.Parameters.AddWithValue("@phone_num", Phone_num.Text);
-            dataAdapter.InsertCommand.Parameters.AddWithValue("@email", Email.Text);
-            dataAdapter.InsertCommand.Parameters.AddWithValue("@age", Convert.ToInt32(Age.Text));
-
-            DataRow newRow = dataSet.Tables["profile"].NewRow();
-            newRow["User_id"] = User_id.Text;
-            newRow["Real_Name"] = Real_Name.Text;
-            newRow["Phone_num"] = Phone_num.Text;
-            newRow["E-mail"] = Email.Text;
-            newRow["Age"] = Convert.ToInt32(Age.Text);
-            dataSet.Tables["orders"].Rows.Add(newRow);
-
-            try
-            {
-                if (dataAdapter.Update(dataSet, "profile") > 0)
-                {
-                    dataSet.Clear();
-                    dataAdapter.Fill(dataSet, "profile");
-                    dataGridView1.DataSource = dataSet.Tables["profile"];
-                }
-                else
-                    MessageBox.Show("검색된 데이터가 없습니다.");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }
-
         private void textEmpty_Click(object sender, EventArgs e)
         {
-            textBoxOrderId.Text = "";
+            User_id.Text = "";
             Phone_num.Text = "";
             Real_Name.Text = "";
             Email.Text = "";
@@ -228,7 +188,7 @@ namespace Project_CSharp
             }
         }
 
-        private void SaveTextFile(string fileName)
+        private void SaveTextFile(string filePath)
         {
             using (StreamWriter sw = new StreamWriter(saveFileDialog1.FileName))
             {
@@ -250,7 +210,7 @@ namespace Project_CSharp
             }
         }
 
-        private void SaveExcelFile(string fileName)
+        private void SaveExcelFile(string filePath)
         {
             Microsoft.Office.Interop.Excel.Application eApp;
             Microsoft.Office.Interop.Excel.Workbook eWorkbook;
@@ -284,6 +244,46 @@ namespace Project_CSharp
                 false, false, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlShared, false, false, Type.Missing, Type.Missing);
             eWorkbook.Close(false, Type.Missing, Type.Missing);
             eApp.Quit();
+        }
+
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+            string sql = "INSERT INTO profile (User_id, Real_Name, Phone_num, Email, Age) " +
+                "VALUES(@user_id, @real_name, @phone_num, @email, @age)";
+            dataAdapter.InsertCommand = new MySqlCommand(sql, conn);
+            dataAdapter.InsertCommand.Parameters.AddWithValue("@user_id", User_id.Text);
+            dataAdapter.InsertCommand.Parameters.AddWithValue("@real_name", Real_Name.Text);
+            dataAdapter.InsertCommand.Parameters.AddWithValue("@phone_num", Phone_num.Text);
+            dataAdapter.InsertCommand.Parameters.AddWithValue("@email", Email.Text);
+            dataAdapter.InsertCommand.Parameters.AddWithValue("@age", Convert.ToInt32(Age.Text));
+
+            DataRow newRow = dataSet.Tables["profile"].NewRow();
+            newRow["User_id"] = User_id.Text;
+            newRow["Real_Name"] = Real_Name.Text;
+            newRow["Phone_num"] = Phone_num.Text;
+            newRow["Email"] = Email.Text;
+            newRow["Age"] = Convert.ToInt32(Age.Text);
+            dataSet.Tables["profile"].Rows.Add(newRow);
+
+            try
+            {
+                if (dataAdapter.Update(dataSet, "profile") > 0)
+                {
+                    dataSet.Clear();
+                    dataAdapter.Fill(dataSet, "profile");
+                    dataGridView1.DataSource = dataSet.Tables["profile"];
+                }
+                else
+                    MessageBox.Show("검색된 데이터가 없습니다.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
     }
 }

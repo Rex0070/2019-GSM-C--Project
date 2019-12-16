@@ -74,18 +74,16 @@ namespace Project_CSharp
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            string sql = "INSERT INTO basic_info (User_id, Name, Level, Cash, Grade) " +
-                "VALUES(@user_id, @name, @level, @cash, @grade)";
+            string sql = "INSERT INTO basic_info (User_id, Level, Cash, Grade) " +
+                "VALUES(@user_id, @level, @cash, @grade)";
             dataAdapter.InsertCommand = new MySqlCommand(sql, conn);
             dataAdapter.InsertCommand.Parameters.AddWithValue("@user_id", User_id.Text);
-            dataAdapter.InsertCommand.Parameters.AddWithValue("@name", User_Name.Text);
             dataAdapter.InsertCommand.Parameters.AddWithValue("@level", Convert.ToInt32(Level.Text));
             dataAdapter.InsertCommand.Parameters.AddWithValue("@cash", Convert.ToInt32(Cash.Text));
             dataAdapter.InsertCommand.Parameters.AddWithValue("@grade", Convert.ToInt32(Grade.Text));
 
             DataRow newRow = dataSet.Tables["basic_info"].NewRow();
             newRow["User_id"] = User_id.Text;
-            newRow["Name"] = User_Name.Text;
             newRow["Level"] = Convert.ToInt32(Level.Text);
             newRow["Cash"] = Convert.ToInt32(Cash.Text);
             newRow["Grade"] = Convert.ToInt32(Grade.Text);
@@ -114,10 +112,9 @@ namespace Project_CSharp
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            string sql = "UPDATE basic_info SET Name=@Name WHERE User_id=@user_id";
+            string sql = "UPDATE basic_info SET level=@level, cash=@cash, grade=@grade WHERE User_id=@user_id";
             dataAdapter.UpdateCommand = new MySqlCommand(sql, conn);
             dataAdapter.UpdateCommand.Parameters.AddWithValue("@user_id", User_id.Text);
-            dataAdapter.UpdateCommand.Parameters.AddWithValue("@name", User_Name.Text);
             dataAdapter.UpdateCommand.Parameters.AddWithValue("@level", Convert.ToInt32(Level.Text));
             dataAdapter.UpdateCommand.Parameters.AddWithValue("@cash", Convert.ToInt32(Cash.Text));
             dataAdapter.UpdateCommand.Parameters.AddWithValue("@grade", Convert.ToInt32(Grade.Text));
@@ -186,9 +183,9 @@ namespace Project_CSharp
         private void TextEmpty_Click(object sender, EventArgs e)
         {
             User_id.Text = "";
-            User_Name.Text = "";
             Level.Text = "";
             Cash.Text = "";
+            Grade.Text = "";
 
             dataAdapter = new MySqlDataAdapter("SELECT * FROM basic_info", conn);
             dataSet = new DataSet();
@@ -239,29 +236,26 @@ namespace Project_CSharp
             }
         }
 
-        private void SaveExcelFile(string fileName)
+        private void SaveExcelFile(string filePath)
         {
-            // 1. 엑셀 사용에 필요한 객체 준비
-            Excel.Application eApp;     // 엑셀 프로그램
-            Excel.Workbook eWorkbook;   // 엑셀 워크북(시트 여러개 포함)
-            Excel.Worksheet eWorkSheet; // 엑셀 워크시트
+            Excel.Application eApp;  
+            Excel.Workbook eWorkbook; 
+            Excel.Worksheet eWorkSheet;
 
             eApp = new Excel.Application();
-            eWorkbook = eApp.Workbooks.Add();       // 엑셀 프로그램 객체에 포함시킴.
-            eWorkSheet = eWorkbook.Sheets[1];       // 엑셀 워크시트는 index가 1부터 시작됨.
+            eWorkbook = eApp.Workbooks.Add(); 
+            eWorkSheet = eWorkbook.Sheets[1]; 
 
-            // 2. 엑셀에 저장할 데이터를 2차원 스트링 배열로 준비
             int colCount = dataSet.Tables["basic_info"].Columns.Count;
             int rowCount = dataSet.Tables["basic_info"].Rows.Count + 1;
-            string[,] dataArr = new string[rowCount, colCount];     // 검색 결과를 저장할 배열
+            string[,] dataArr = new string[rowCount, colCount];
 
-            // 2-1 Column 이름 저장
+
             for (int i = 0; i < dataSet.Tables["basic_info"].Columns.Count; i++)
             {
-                dataArr[0, i] = dataSet.Tables["basic_info"].Columns[i].ColumnName;   // 찻 헹에 컬럼이름들 저장
+                dataArr[0, i] = dataSet.Tables["basic_info"].Columns[i].ColumnName;
             }
 
-            // 2-2 Row 데이터 저장
             for (int i = 0; i < dataSet.Tables["basic_info"].Rows.Count; i++)
             {
                 for (int j = 0; j < dataSet.Tables["basic_info"].Columns.Count; j++)
@@ -270,7 +264,6 @@ namespace Project_CSharp
                 }
             }
 
-            // 3. 준비된 스트링 배열을 엑셀파일로 저장
             string endCell = Convert.ToChar(65 + dataSet.Tables["basic_info"].Columns.Count - 1).ToString() + rowCount.ToString();
             eWorkSheet.get_Range($"A1:{endCell}").Value = dataArr;    // 배열의 데이터를 엑셀 시트에 기록
 

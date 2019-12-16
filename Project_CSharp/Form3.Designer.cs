@@ -38,8 +38,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.Real_Name = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBoxOrderId = new System.Windows.Forms.TextBox();
-            this.User_id = new System.Windows.Forms.Label();
+            this.User_id = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnSelect = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
@@ -76,8 +76,8 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.Real_Name);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textBoxOrderId);
             this.panel1.Controls.Add(this.User_id);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(26, 52);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
@@ -95,11 +95,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(72, 135);
+            this.label5.Location = new System.Drawing.Point(70, 135);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(27, 12);
+            this.label5.Size = new System.Drawing.Size(29, 12);
             this.label5.TabIndex = 8;
-            this.label5.Text = "Age";
+            this.label5.Text = "나이";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // Email
@@ -113,11 +113,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 85);
+            this.label4.Location = new System.Drawing.Point(47, 85);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 12);
+            this.label4.Size = new System.Drawing.Size(53, 12);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Phone_num";
+            this.label4.Text = "전화번호";
             // 
             // Phone_num
             // 
@@ -130,11 +130,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(57, 110);
+            this.label3.Location = new System.Drawing.Point(59, 110);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 12);
+            this.label3.Size = new System.Drawing.Size(41, 12);
             this.label3.TabIndex = 4;
-            this.label3.Text = "E-mail";
+            this.label3.Text = "이메일";
             // 
             // Real_Name
             // 
@@ -147,28 +147,28 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 58);
+            this.label2.Location = new System.Drawing.Point(43, 58);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 12);
+            this.label2.Size = new System.Drawing.Size(57, 12);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Real_Name";
-            // 
-            // textBoxOrderId
-            // 
-            this.textBoxOrderId.Location = new System.Drawing.Point(106, 30);
-            this.textBoxOrderId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxOrderId.Name = "textBoxOrderId";
-            this.textBoxOrderId.Size = new System.Drawing.Size(378, 21);
-            this.textBoxOrderId.TabIndex = 1;
+            this.label2.Text = "실제 이름";
             // 
             // User_id
             // 
-            this.User_id.AutoSize = true;
-            this.User_id.Location = new System.Drawing.Point(53, 33);
+            this.User_id.Location = new System.Drawing.Point(106, 30);
+            this.User_id.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.User_id.Name = "User_id";
-            this.User_id.Size = new System.Drawing.Size(47, 12);
-            this.User_id.TabIndex = 0;
-            this.User_id.Text = "User_id";
+            this.User_id.Size = new System.Drawing.Size(378, 21);
+            this.User_id.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(31, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 12);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "유저 아이디";
             // 
             // label7
             // 
@@ -200,6 +200,7 @@
             this.btnInsert.TabIndex = 2;
             this.btnInsert.Text = "삽입";
             this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // btnUpdate
             // 
@@ -226,6 +227,7 @@
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(26, 317);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -352,7 +354,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GSM BOOK - 주문 내역";
+            this.Text = "UNICEF - 프로필 내역";
             this.Load += new System.EventHandler(this.Form3_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -376,8 +378,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox Real_Name;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxOrderId;
-        private System.Windows.Forms.Label User_id;
+        private System.Windows.Forms.TextBox User_id;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSelect;
         private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.Button btnUpdate;

@@ -97,11 +97,11 @@ namespace Project_CSharp
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(39, 124);
+            this.label5.Location = new System.Drawing.Point(30, 124);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 12);
+            this.label5.Size = new System.Drawing.Size(69, 12);
             this.label5.TabIndex = 8;
-            this.label5.Text = "Favo_POS";
+            this.label5.Text = "선호 포지션";
             // 
             // Win_Rate
             // 
@@ -114,11 +114,11 @@ namespace Project_CSharp
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(32, 74);
+            this.label4.Location = new System.Drawing.Point(9, 74);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 12);
+            this.label4.Size = new System.Drawing.Size(93, 12);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Play_Cham";
+            this.label4.Text = "플레이한 챔피언";
             // 
             // Play_Cham
             // 
@@ -131,11 +131,11 @@ namespace Project_CSharp
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(46, 99);
+            this.label3.Location = new System.Drawing.Point(70, 99);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 12);
+            this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Win_Rate";
+            this.label3.Text = "승률";
             // 
             // Play_Time
             // 
@@ -148,11 +148,11 @@ namespace Project_CSharp
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 47);
+            this.label2.Location = new System.Drawing.Point(30, 47);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 12);
+            this.label2.Size = new System.Drawing.Size(69, 12);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Play_Time";
+            this.label2.Text = "플레이 시간";
             // 
             // User_id
             // 
@@ -165,11 +165,11 @@ namespace Project_CSharp
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(55, 22);
+            this.label1.Location = new System.Drawing.Point(33, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 12);
+            this.label1.Size = new System.Drawing.Size(69, 12);
             this.label1.TabIndex = 0;
-            this.label1.Text = "User_id";
+            this.label1.Text = "유저 아이디";
             // 
             // label7
             // 
@@ -228,6 +228,7 @@ namespace Project_CSharp
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(26, 315);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
