@@ -64,3 +64,4 @@ C:\Users\jshga\Documents\GitHub\2019-GSM-C-Project\Project_CSharp\obj\Debug\Proj
 C:\Users\jshga\Documents\GitHub\2019-GSM-C-Project\Project_CSharp\obj\Debug\Project_CSharp.csproj.CopyComplete
 C:\Users\jshga\Documents\GitHub\2019-GSM-C-Project\Project_CSharp\obj\Debug\Project_CSharp.exe
 C:\Users\jshga\Documents\GitHub\2019-GSM-C-Project\Project_CSharp\obj\Debug\Project_CSharp.pdb
+C:\Users\jshga\Documents\GitHub\2019-GSM-C-Project\Project_CSharp\obj\Debug\Project_CSharp.csproj.ResolveComReference.cache

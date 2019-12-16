@@ -317,6 +317,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form4";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UNICEF - 메인 화면";
             this.Load += new System.EventHandler(this.Form4_Load);
             this.menuStrip1.ResumeLayout(false);

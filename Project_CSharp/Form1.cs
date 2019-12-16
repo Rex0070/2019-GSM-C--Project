@@ -4,10 +4,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Project_CSharp
 {
@@ -24,6 +26,7 @@ namespace Project_CSharp
         MySqlConnection conn;
         MySqlDataAdapter dataAdapter;
         DataSet dataSet;
+        private object filePath;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -199,6 +202,92 @@ namespace Project_CSharp
             this.Visible = false;
             Form2 player_info = new Form2();
             player_info.ShowDialog();
+        }
+
+        private void SaveClick_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.RowCount == 0)
+            {
+                MessageBox.Show("저장할 데이터가 없습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            saveFileDialog1.Filter = "텍스트 파일(*.txt) | *.txt";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                SaveTextFile(saveFileDialog1.FileName);
+        }
+
+        private void SaveTextFile(string fileName)
+        {
+            using (StreamWriter sw = new StreamWriter(saveFileDialog1.FileName))
+            {
+                foreach (DataColumn col in dataSet.Tables["basic_info"].Columns)
+                {
+                    sw.Write($"{col.ColumnName}\t");
+                }
+                sw.WriteLine();
+
+                foreach (DataRow row in dataSet.Tables["basic_info"].Rows)
+                {
+                    string rowString = "";
+                    foreach (var item in row.ItemArray)
+                    {
+                        rowString += $"{item.ToString()}\t";
+                    }
+                    sw.WriteLine(rowString);
+                }
+            }
+        }
+
+        private void SaveExcelFile(string fileName)
+        {
+            // 1. 엑셀 사용에 필요한 객체 준비
+            Excel.Application eApp;     // 엑셀 프로그램
+            Excel.Workbook eWorkbook;   // 엑셀 워크북(시트 여러개 포함)
+            Excel.Worksheet eWorkSheet; // 엑셀 워크시트
+
+            eApp = new Excel.Application();
+            eWorkbook = eApp.Workbooks.Add();       // 엑셀 프로그램 객체에 포함시킴.
+            eWorkSheet = eWorkbook.Sheets[1];       // 엑셀 워크시트는 index가 1부터 시작됨.
+
+            // 2. 엑셀에 저장할 데이터를 2차원 스트링 배열로 준비
+            int colCount = dataSet.Tables["basic_info"].Columns.Count;
+            int rowCount = dataSet.Tables["basic_info"].Rows.Count + 1;
+            string[,] dataArr = new string[rowCount, colCount];     // 검색 결과를 저장할 배열
+
+            // 2-1 Column 이름 저장
+            for (int i = 0; i < dataSet.Tables["basic_info"].Columns.Count; i++)
+            {
+                dataArr[0, i] = dataSet.Tables["basic_info"].Columns[i].ColumnName;   // 찻 헹에 컬럼이름들 저장
+            }
+
+            // 2-2 Row 데이터 저장
+            for (int i = 0; i < dataSet.Tables["basic_info"].Rows.Count; i++)
+            {
+                for (int j = 0; j < dataSet.Tables["basic_info"].Columns.Count; j++)
+                {
+                    dataArr[i + 1, j] = dataSet.Tables["basic_info"].Rows[i].ItemArray[j].ToString();
+                }
+            }
+
+            // 3. 준비된 스트링 배열을 엑셀파일로 저장
+            string endCell = Convert.ToChar(65 + dataSet.Tables["basic_info"].Columns.Count - 1).ToString() + rowCount.ToString();
+            eWorkSheet.get_Range($"A1:{endCell}").Value = dataArr;    // 배열의 데이터를 엑셀 시트에 기록
+
+            eWorkbook.SaveAs(filePath, Excel.XlFileFormat.xlWorkbookDefault, Type.Missing, Type.Missing,
+                false, false, Excel.XlSaveAsAccessMode.xlShared, false, false, Type.Missing, Type.Missing,
+                Type.Missing);
+            eWorkbook.Close(false, Type.Missing, Type.Missing);
+            eApp.Quit();
+        }
+
+        private void ExcelClick_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.Filter = "엑셀 파일(*.xlsx) | *.xlsx";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                SaveExcelFile(saveFileDialog1.FileName);
+            }
         }
     }
 }

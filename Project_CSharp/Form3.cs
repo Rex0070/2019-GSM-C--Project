@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,7 @@ namespace Project_CSharp
         MySqlConnection conn;
         MySqlDataAdapter dataAdapter;
         DataSet dataSet;
+        private object filePath;
 
         private void Form3_Load(object sender, EventArgs e)
         {
@@ -202,6 +204,86 @@ namespace Project_CSharp
         private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void SaveClick_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.RowCount == 0)
+            {
+                MessageBox.Show("저장할 데이터가 없습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            saveFileDialog1.Filter = "텍스트 파일(*.txt) | *.txt";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                SaveTextFile(saveFileDialog1.FileName);
+        }
+
+        private void ExcelClick_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.Filter = "엑셀 파일(*.xlsx) | *.xlsx";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                SaveExcelFile(saveFileDialog1.FileName);
+            }
+        }
+
+        private void SaveTextFile(string fileName)
+        {
+            using (StreamWriter sw = new StreamWriter(saveFileDialog1.FileName))
+            {
+                foreach (DataColumn col in dataSet.Tables["profile"].Columns)
+                {
+                    sw.Write($"{col.ColumnName}\t");
+                }
+                sw.WriteLine();
+
+                foreach (DataRow row in dataSet.Tables["profile"].Rows)
+                {
+                    string rowString = "";
+                    foreach (var item in row.ItemArray)
+                    {
+                        rowString += $"{item.ToString()}\t";
+                    }
+                    sw.WriteLine(rowString);
+                }
+            }
+        }
+
+        private void SaveExcelFile(string fileName)
+        {
+            Microsoft.Office.Interop.Excel.Application eApp;
+            Microsoft.Office.Interop.Excel.Workbook eWorkbook;
+            Microsoft.Office.Interop.Excel.Worksheet eWorkSheet;
+            eApp = new Microsoft.Office.Interop.Excel.Application();
+            eWorkbook = eApp.Workbooks.Add();
+            eWorkSheet = eWorkbook.Sheets[1];
+
+            string[,] dataArr;
+            int colCount = dataSet.Tables["profile"].Columns.Count + 1;
+            int rowCount = dataSet.Tables["profile"].Rows.Count + 1;
+            dataArr = new string[rowCount, colCount];
+
+            for (int i = 0; i < dataSet.Tables["profile"].Columns.Count; i++)
+            {
+                dataArr[0, 1] = dataSet.Tables["profile"].Columns[i].ColumnName;
+            }
+
+            for (int i = 0; i < dataSet.Tables["profile"].Rows.Count; i++)
+            {
+                for (int j = 0; j < dataSet.Tables["profile"].Columns.Count; j++)
+                {
+                    dataArr[i + 1, j] = dataSet.Tables["profile"].Rows[0].ItemArray[j].ToString();
+                }
+            }
+
+            string endCell = $"E{rowCount}";
+            eWorkSheet.get_Range("A1:" + endCell).Value = dataArr;
+
+            eWorkbook.SaveAs(filePath, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookDefault, Type.Missing, Type.Missing,
+                false, false, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlShared, false, false, Type.Missing, Type.Missing);
+            eWorkbook.Close(false, Type.Missing, Type.Missing);
+            eApp.Quit();
         }
     }
 }

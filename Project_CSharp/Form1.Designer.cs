@@ -52,11 +52,17 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.TextEmpty = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.테이블데이터저장ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SaveClick = new System.Windows.Forms.ToolStripMenuItem();
+            this.ExcelClick = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -72,7 +78,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.User_id);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(26, 34);
+            this.panel1.Location = new System.Drawing.Point(29, 62);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(541, 158);
@@ -167,7 +173,7 @@
             // 
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label7.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label7.Location = new System.Drawing.Point(139, 9);
+            this.label7.Location = new System.Drawing.Point(142, 37);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(329, 24);
             this.label7.TabIndex = 7;
@@ -221,7 +227,7 @@
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(26, 289);
+            this.dataGridView1.Location = new System.Drawing.Point(29, 317);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -233,7 +239,7 @@
             // 
             this.groupBox1.Controls.Add(this.Profile);
             this.groupBox1.Controls.Add(this.Player_info);
-            this.groupBox1.Location = new System.Drawing.Point(577, 24);
+            this.groupBox1.Location = new System.Drawing.Point(580, 52);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(263, 63);
             this.groupBox1.TabIndex = 9;
@@ -269,7 +275,7 @@
             this.groupBox2.Controls.Add(this.btnSelect);
             this.groupBox2.Controls.Add(this.btnInsert);
             this.groupBox2.Controls.Add(this.btnDelete);
-            this.groupBox2.Location = new System.Drawing.Point(26, 197);
+            this.groupBox2.Location = new System.Drawing.Point(29, 225);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(541, 71);
             this.groupBox2.TabIndex = 10;
@@ -290,27 +296,63 @@
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(577, 96);
+            this.pictureBox1.Location = new System.Drawing.Point(580, 124);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(263, 172);
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.테이블데이터저장ToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(867, 24);
+            this.menuStrip1.TabIndex = 12;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // 테이블데이터저장ToolStripMenuItem
+            // 
+            this.테이블데이터저장ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.SaveClick,
+            this.ExcelClick});
+            this.테이블데이터저장ToolStripMenuItem.Name = "테이블데이터저장ToolStripMenuItem";
+            this.테이블데이터저장ToolStripMenuItem.Size = new System.Drawing.Size(123, 20);
+            this.테이블데이터저장ToolStripMenuItem.Text = "테이블 데이터 저장";
+            // 
+            // SaveClick
+            // 
+            this.SaveClick.Name = "SaveClick";
+            this.SaveClick.Size = new System.Drawing.Size(180, 22);
+            this.SaveClick.Text = "txt로 저장";
+            this.SaveClick.Click += new System.EventHandler(this.SaveClick_Click);
+            // 
+            // ExcelClick
+            // 
+            this.ExcelClick.Name = "ExcelClick";
+            this.ExcelClick.Size = new System.Drawing.Size(180, 22);
+            this.ExcelClick.Text = "Excel로 저장";
+            this.ExcelClick.Click += new System.EventHandler(this.ExcelClick_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(867, 688);
+            this.ClientSize = new System.Drawing.Size(867, 709);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label7);
+            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UNICEF - 기본 정보 목록";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
@@ -319,7 +361,10 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -348,5 +393,10 @@
         private System.Windows.Forms.Button TextEmpty;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox Grade;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 테이블데이터저장ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SaveClick;
+        private System.Windows.Forms.ToolStripMenuItem ExcelClick;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
